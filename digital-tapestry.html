@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Digital Tapestry | CDP Portfolio</title>
+  <style>
+    body {
+      font-family: "Karla", sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #fff;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .header {
+      margin-bottom: 3rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      color: #666;
+      text-decoration: none;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .back-link:hover {
+      color: #111;
+    }
+
+    .project-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-subtitle {
+      font-size: 1.5rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+    }
+
+    .project-link {
+      display: inline-block;
+      font-size: 1.1rem;
+      color: #0066FF;
+      text-decoration: none;
+      margin-bottom: 2rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #0066FF;
+    }
+
+    .project-link:hover {
+      opacity: 0.8;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-content {
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 2rem 0;
+      border-radius: 12px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .image-grid img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .tech-details h3 {
+      color: #333;
+      font-size: 1.3rem;
+      margin: 1.5rem 0 0.5rem 0;
+    }
+
+    .tech-details p {
+      color: #666;
+      margin: 0 0 1rem 0;
+      padding-left: 1rem;
+      border-left: 2px solid #eee;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .project-title {
+        font-size: 2rem;
+      }
+      
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <a href="index.html" class="back-link">← Back to Projects</a>
+      <h1 class="project-title">The Digital Tapestry</h1>
+      <p class="project-subtitle">Mapping the invisible infrastructures that sustain craft traditions in Bangkok's urban fabric.
+    </div>
+
+    <img src="assets/images/digitapes.jpg" alt="Digital Tapestry Project" class="hero-image">
+    <div class="project-links">
+      <a href="https://growapear.github.io/digital_tapestry/" target="_blank" class="project-link">Visit Project Website →</a>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Overview</h2>
+      <div class="section-content">
+        <p>
+          <b>The Digital Tapestry</b> is an interactive web project that visualizes the often-invisible ecosystems of traditional craft communities in Bangkok. It maps how knowledge, materials, and relationships flow across space—revealing an informal yet resilient network of artisans, workshops, and shared rituals that persist despite increasing urban formalization.
+
+          The project emerged from a desire to understand how craft survives when it is unrecognized by formal planning systems. Using site visits, interviews, archival imagery, and spatial analysis, I created a digital interface that allows users to explore hidden communities through interactive maps, sound recordings, and narrative fragments.
+          
+          Rather than documenting individual makers, The Digital Tapestry focuses on the broader systems that enable knowledge transfer: family ties, spatial proximity, trusted word-of-mouth.
+          
+          It's not just a research archive—it's a way of re-seeing the city. The work invites us to zoom into overlooked spaces, listen for ambient histories, and reflect on the fragility and ingenuity of informal systems.
+          
+          Ultimately, The Digital Tapestry is a foundation: the first step in a longer inquiry into craft as memory, space as archive, and the potential of digital tools to make the hidden visible.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Process</h2>
+      <div class="section-content">
+        <p>
+            The project began with mapping exercises based on real urban fabric in Bangkok. I conducted fieldwork and secondary research on craft clusters—especially in neighborhoods where knowledge circulates informally, often between houses or across generations.
+
+            I used Google Maps API and archival image sourcing to construct a narrative web of spaces. These were translated into an interactive digital map layered with sound, text, and visual cues.
+            
+            The goal was to move beyond the "maker profile" and focus instead on the atmospheric, spatial, and social conditions that allow craft to survive quietly in the background of the city.
+            
+             </p>
+        <div class="image-grid">
+          <img src="assets/images/digiprocess.jpg" alt="Process Image 1">
+          <img src="assets/images/digiprocess2.png" alt="Process Image 2">
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Demo Video</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/b3zo9rAUl00?si=oYkDjVdhCu6oS5I3" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Technical Details</h2>
+      <div class="section-content">
+        <p>The system utilizes:</p>
+        
+        <div class="tech-details">
+          <h3>Spatial Data Mapping</h3>
+          <p>Manually traced neighborhood geographies and informal craft routes layered onto a digital map</p>
+
+          <h3>Ambient Sound Integration</h3>
+          <p>Embedded environmental recordings collected in alleyways, workshops, and street corners</p>
+
+          <h3>Web-based Interactive Interface</h3>
+          <p>Built with Figma and translated into an exploratory website (Figma prototype / HTML available)</p>
+
+          <h3>Narrative Linking & Metadata Tagging</h3>
+          <p>Each node (person, space, material) is tagged with cultural context and linked to larger systems of support</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

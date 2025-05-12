@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pear J. | CDP Portfolio</title>
+  <style>
+    body {
+      font-family: "Karla", sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #fff;
+      color: #111;
+    }
+    .container {
+      max-width: none;
+      margin: 0;
+      padding: 2rem 4rem;
+    }
+    .svg-header {
+      width: 160px;
+      margin-top: 1rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.2rem;
+    }
+    h2 {
+      font-size: 1.3rem;
+      font-weight: normal;
+      margin-top: 0;
+    }
+    .intro p {
+      margin: 1rem 0;
+    }
+    .project-section {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      cursor: pointer;
+      height: 500px; /* Set fixed height for card */
+      display: flex;
+      flex-direction: column;
+    }
+    .project-section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+    .project-section img {
+      margin: 0;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      width: 100%;
+      height: 400px; /* Increased image height */
+      flex-grow: 1;
+    }
+    .project-title {
+      padding: 1.5rem; /* Increased padding */
+      font-size: 1.1rem; /* Slightly larger font */
+      line-height: 1.4;
+    }
+    .note {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 1rem;
+    }
+    .emoji {
+      margin-right: 0.5rem;
+    }
+    .header-container {
+      max-width: 160px;
+      margin-left: 2rem;
+    }
+
+    .content-container {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 4rem;
+      margin-top: 2rem;
+    }
+
+    .left-column {
+      position: sticky;
+      top: 2rem;
+      padding-left: 2rem;
+    }
+
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      padding-right: 2rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .intro-text {
+      max-width: 800px;
+    }
+
+    .profile-emoji {
+      width: 120px;
+      margin: 1.5rem 0;
+    }
+
+    @media (max-width: 1200px) {
+      .content-container {
+        grid-template-columns: 320px 1fr;
+        gap: 2rem;
+      }
+      
+      .container {
+        padding: 2rem;
+      }
+      
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .content-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .left-column {
+        position: static;
+        padding-left: 0;
+      }
+      
+      .right-column {
+        padding-right: 0;
+      }
+      
+      .header-container {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header-container">
+      <img src="assets/images/pearj.svg" alt="Pear J logo" class="svg-header" />
+    </div>
+
+    <div class="content-container">
+      <div class="left-column">
+        <h2>Panyanus Jansomwong</h2>
+        <p><i>NYC-based interdisciplinary designer integrating architecture, computational design, and interactive technology to craft innovative spatial experiences.</i></p>
+        <p><i>Freshly graduated from a Master of Science in Computational Design Practices at Columbia University GSAPP.</i></p>
+        <img src="assets/images/emojipear.png" alt="Emoji Pear" class="profile-emoji">
+      </div>
+
+      <div class="right-column">
+        <div class="intro-text">
+          <p><strong>A curated collection of selected design research, interactive systems, and spatial experiments completed during the CDP program at Columbia GSAPP.</strong></p>
+          <p><i>Projects span speculative tools, machine learning interfaces, kinetic objects, and data-driven visualizations — each exploring how design can preserve, mediate, or reimagine embodied knowledge.</i></p>
+          <p class="note">Certain collaborative attributions and technical details have been abbreviated for brevity and clarity.</p>
+        </div>
+        
+        <div class="projects-grid">
+          <!-- Project Cards -->
+          <div class="project-section" onclick="window.location.href='crafticulate.html'">
+            <div class="project-title"><span class="emoji">✽</span> Crafticulate | Capstone Project</div>
+            <img src="assets/images/crafticulate.jpg" alt="Crafticulate Project">
+          </div>
+
+          <div class="project-section" onclick="window.location.href='digital-tapestry.html'">
+            <div class="project-title"><span class="emoji">✽</span> Colloquium I: The Digital Tapestry</div>
+            <img src="assets/images/digital-tapestry.jpg" alt="Digital Tapestry">
+          </div>
+
+          <div class="project-section" onclick="window.location.href='nonlinear-instruction.html'">
+            <div class="project-title"><span class="emoji">✽</span> Colloquium II & Spatial UX: Nonlinear Instruction</div>
+            <img src="assets/images/nonlinear-instruction.jpg" alt="Nonlinear Instruction">
+          </div>
+
+          <div class="project-section" onclick="window.location.href='flipframe.html'">
+            <div class="project-title"><span class="emoji">✽</span> Making Senses: Flipframe</div>
+            <img src="assets/images/flipframe.jpg" alt="Flipframe Project">
+          </div>
+
+          <div class="project-section" onclick="window.location.href='dogs-of-nyc.html'">
+            <div class="project-title"><span class="emoji">✽</span> Data Viz: Dogs of NYC</div>
+            <img src="assets/images/dogs-of-nyc.jpg" alt="Dogs of NYC Project">
+          </div>
+
+          <div class="project-section" onclick="window.location.href='automating-workspaces.html'">
+            <div class="project-title"><span class="emoji">✽</span> Design Intelligence: Automating Flexible Workspaces</div>
+            <img src="assets/images/automating-workspaces.jpg" alt="Flexible Workspaces Project">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

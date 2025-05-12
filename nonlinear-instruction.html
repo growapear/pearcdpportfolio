@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nonlinear Instruction | CDP Portfolio</title>
+  <style>
+    body {
+      font-family: "Karla", sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #fff;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .header {
+      margin-bottom: 3rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      color: #666;
+      text-decoration: none;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .back-link:hover {
+      color: #111;
+    }
+
+    .project-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-subtitle {
+      font-size: 1.5rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+    }
+
+    .project-link {
+      display: inline-block;
+      font-size: 1.1rem;
+      color: #0066FF;
+      text-decoration: none;
+      margin-bottom: 2rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #0066FF;
+    }
+
+    .project-link:hover {
+      opacity: 0.8;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-content {
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 2rem 0;
+      border-radius: 12px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .image-grid img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .tech-details h3 {
+      color: #333;
+      font-size: 1.6rem;
+      margin: 2rem 0 1rem 0;
+      font-weight: 600;
+    }
+
+    .tech-details p {
+      color: #666;
+      font-size: 1.3rem;
+      margin: 0 0 2rem 0;
+      padding-left: 1.5rem;
+      border-left: 3px solid #eee;
+      line-height: 1.6;
+    }
+
+    .tech-details {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: #fafafa;
+      border-radius: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .project-title {
+        font-size: 2rem;
+      }
+      
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .project-credits {
+      margin: 1rem 0;
+      color: #666;
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+    
+    .project-credits p {
+      margin: 0.2rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <a href="index.html" class="back-link">← Back to Projects</a>
+      <h1 class="project-title">Nonlinear Instruction</h1>
+      <p class="project-subtitle">A speculative learning interface that translates craft gestures into a nonlinear system of instruction, memory, and motion.</p>
+    </div>
+
+    <img src="assets/images/nonlinear1.jpg" alt="Nonlinear Instruction Project" class="hero-image">
+    <div class="project-links">
+      <a href="https://gsapp-cdp.github.io/colloquium-2-2024/work/pear/" target="_blank" class="project-link">Visit Project Website →</a>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Overview</h2>
+      <div class="section-content">
+        <p>
+          <b>Nonlinear Instruction</b>  is a research and interaction design project exploring how embodied craft knowledge might be preserved and taught through digital systems—without relying on linear, text-based formats.
+
+          Traditional craft learning is passed down through observation, repetition, and intuition. Unlike institutional education, it is dynamic and nonlinear. This project asks: What if a system could teach like an artisan—through motion, ambiguity, and experience?
+          
+          The prototype is an interface inspired by pottery instruction. Instead of presenting steps in order, it invites users to explore floating gesture tiles. Each tile represents a hand movement and can be grouped, rearranged, or followed based on curiosity and context. Users can toggle between timeline views, gesture types, and cultural interpretations.
+          
+          At the heart of the project is the belief that teaching doesn't have to be fixed—it can be responsive, spatial, and intuitive.
+          
+          This work directly informed the design logic behind Crafticulate, offering an early framework for non-verbal, motion-based interfaces that preserve embodied knowledge without reducing it to instruction manuals.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Process</h2>
+      <div class="section-content">
+        <p>
+            The project began as an exploration into how gesture and memory could be encoded digitally. I began by analyzing how artisans teach—through proximity, repetition, and subtle correction—and asked how that could be reimagined through a digital interface.
+
+            Inspired by floating spatial interfaces, I prototyped a UI system where gestures function as interactive tiles. Each tile is data-rich: it links to a specific process (e.g. pulling, pinching), a material context, and a sequence or loop within the making process.
+            
+            The layout is intentionally non-linear, offering multiple paths for interpretation, experimentation, and memory construction.
+            
+             </p>
+        <div class="image-grid">
+          <img src="assets/images/nonlinearprocess1.jpg" alt="Process Image 1">
+          <img src="assets/images/nonlinearprocess2.png" alt="Process Image 2">
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Demo Video</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/459zGOWQ8AM?si=wDe3BXWpORZ94SQR" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Technical Details</h2>
+      <div class="section-content">
+        <p>The system utilizes:</p>
+        
+        <div class="tech-details">
+          <h3>Hand Tracking via Webcam</h3>
+          <p>A live camera feed detects and tracks hand positions in real time using computer vision libraries</p>
+
+          <h3>Gesture-Driven Interaction with Projector Overlay</h3>
+          <p>A spatial projection overlays digital tiles onto physical surfaces, allowing users to interact with the system using hand movement alone</p>
+
+          <h3>UI Prototyping in p5.js</h3>
+          <p>The interface was developed using p5.js, enabling responsive gesture interaction, animated transitions, and flexible experimentation with motion-based navigation</p>
+
+          <h3>Framework Developed with Spatial Pixel's Procession Tool</h3>
+          <p>The core interaction engine leverages Procession, a spatial computing framework by Spatial Pixel, to create intuitive, embodied UI behaviors based on user movement</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

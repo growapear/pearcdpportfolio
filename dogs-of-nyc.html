@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dogs of NYC | CDP Portfolio</title>
+  <style>
+    body {
+      font-family: "Karla", sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #fff;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .header {
+      margin-bottom: 3rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      color: #666;
+      text-decoration: none;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .back-link:hover {
+      color: #111;
+    }
+
+    .project-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-subtitle {
+      font-size: 1.5rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+    }
+
+    .project-link {
+      display: inline-block;
+      font-size: 1.1rem;
+      color: #0066FF;
+      text-decoration: none;
+      margin-bottom: 2rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #0066FF;
+    }
+
+    .project-link:hover {
+      opacity: 0.8;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-content {
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 2rem 0;
+      border-radius: 12px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .image-grid img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .tech-details h3 {
+      color: #333;
+      font-size: 1.6rem;
+      margin: 2rem 0 1rem 0;
+      font-weight: 600;
+    }
+
+    .tech-details p {
+      color: #666;
+      font-size: 1.3rem;
+      margin: 0 0 2rem 0;
+      padding-left: 1.5rem;
+      border-left: 3px solid #eee;
+      line-height: 1.6;
+    }
+
+    .tech-details {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: #fafafa;
+      border-radius: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .project-title {
+        font-size: 2rem;
+      }
+      
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <a href="index.html" class="back-link">← Back to Projects</a>
+      <h1 class="project-title">Dogs of NYC</h1>
+      <p class="project-subtitle">A playful scrollytelling exploration of New York City’s most popular dog names—by borough, gender, and neighborhood.</p>
+    </div>
+
+    <img src="assets/images/dogs2.png" alt="Dogs of NYC Project" class="hero-image">
+    <div class="project-links">
+      <a href="https://growapear.github.io/dogsofnyc/" target="_blank" class="project-link">Visit Project Website →</a>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Overview</h2>
+      <div class="section-content">
+        <p>
+          <b>Dogs of NYC</b> is a visual storytelling project that transforms a seemingly simple dataset—registered dog names in New York City—into a poetic portrait of place, personality, and naming culture.
+
+          Using data from the NYC Open Data portal, the project presents the most common dog names across boroughs, zip codes, and gender through an interactive scrollytelling website. But beyond just presenting facts, the project plays with color, motion, and typographic rhythm to create a joyful and intuitive experience.
+          
+          As users scroll, they uncover subtle trends—like “Max” dominating in Manhattan, or more playful names like “Peanut” clustering in Brooklyn. The design doesn’t aim to be analytical alone, but emotional: it asks how names carry identity, and how urban data can reflect the personalities of both dogs and neighborhoods.
+          
+          The interface embraces simplicity, using bright palettes and large type to create moments of pause and delight. Each transition reveals not just numbers, but the lived texture of urban life. </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Process</h2>
+      <div class="section-content">
+        <p>
+            The project began with data sourced from the NYC Open Data Portal, specifically the dog licensing dataset. I explored the raw CSV to identify naming patterns across boroughs, zip codes, gender, and frequency.
+
+            Data cleaning was done using Excel and Python, followed by exploratory charting in Observable to test visual directions. Once key trends were identified, I shifted to designing a scrollytelling narrative—building a lightweight, custom website using HTML, CSS, and JavaScript.
+            
+            Throughout the process, I focused on graphic clarity, color hierarchy, and pacing between data and text. The final design embraces playfulness without sacrificing legibility—transforming a public dataset into a spatial, emotional reading of city life through its dogs. </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Technical Details</h2>
+      <div class="section-content">
+        <p>The system utilizes:</p>
+        
+        <div class="tech-details">
+          <h3>Data Processing</h3>
+          <p>Python and pandas for cleaning and analyzing NYC Open Data's dog licensing dataset, processing over 500,000 records</p>
+
+          <h3>Geospatial Analysis</h3>
+          <p>Integration with NYC's PLUTO dataset for neighborhood-level analysis and mapping of dog population patterns</p>
+
+          <h3>Interactive Visualization</h3>
+          <p>D3.js and Mapbox GL JS for creating responsive, web-based visualizations and interactive maps</p>
+
+          <h3>Statistical Analysis</h3>
+          <p>Custom algorithms for identifying trends in breed distribution, name popularity, and neighborhood correlations</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

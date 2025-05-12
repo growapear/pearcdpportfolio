@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Automating Workspaces | CDP Portfolio</title>
+  <style>
+    body {
+      font-family: "Karla", sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #fff;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .header {
+      margin-bottom: 3rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      color: #666;
+      text-decoration: none;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .back-link:hover {
+      color: #111;
+    }
+
+    .project-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-subtitle {
+      font-size: 1.5rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+    }
+
+    .project-link {
+      display: inline-block;
+      font-size: 1.1rem;
+      color: #0066FF;
+      text-decoration: none;
+      margin-bottom: 2rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #0066FF;
+    }
+
+    .project-link:hover {
+      opacity: 0.8;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-content {
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 2rem 0;
+      border-radius: 12px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .image-grid img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .tech-details h3 {
+      color: #333;
+      font-size: 1.6rem;
+      margin: 2rem 0 1rem 0;
+      font-weight: 600;
+    }
+
+    .tech-details p {
+      color: #666;
+      font-size: 1.3rem;
+      margin: 0 0 2rem 0;
+      padding-left: 1.5rem;
+      border-left: 3px solid #eee;
+      line-height: 1.6;
+    }
+
+    .tech-details {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: #fafafa;
+      border-radius: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .project-title {
+        font-size: 2rem;
+      }
+      
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <a href="index.html" class="back-link">← Back to Projects</a>
+      <h1 class="project-title">Automating Flexible Workspaces</h1>
+      <p class="project-subtitle">A generative design tool that automates workspace layouts based on users' schedules, roles, and task types.</p>
+    </div>
+
+    <img src="assets/images/gif2.gif" alt="Automating Workspaces Project" class="hero-image">
+    <div class="project-links">
+      <a href="https://medium.com/@pj2445/automating-flexible-workspaces-a-schedule-based-layout-generation-for-everyone-cdbcfd71978d" target="_blank" class="project-link">View Project Website →</a>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Overview</h2>
+      <div class="section-content">
+        <p>
+          <b>Automating Flexible Workspaces</b>  is a generative design project that addresses a growing need: how to make spatial layouts adapt to dynamic, hybrid schedules. Rather than designing one-size-fits-all office environments, this tool generates real-time layout configurations based on who is present, when, and what they need to do.
+
+          Users input their daily work schedules, preferred locations, and task types (e.g., focused work, collaboration, heads-down time). The system then creates an optimized workspace arrangement that minimizes unnecessary movement, maximizes overlap among collaborators, and respects focus zones.
+          
+          Built within Rhino/Grasshopper using Python, the system integrates a shortest-path algorithm and a custom visualization layer that encodes task difficulty through color and node size.
+          
+          This project reframes layout not as a static plan, but as a time-responsive system. It imagines the office as a living network—capable of rearranging itself based on behavioral patterns, not just architectural boundaries.
+          
+          Ultimately, the tool empowers both designers and occupants to better align space with daily rhythms, bridging human-centered scheduling with architectural logic.
+          
+          </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Process</h2>
+      <div class="section-content">
+        <p>
+            The project began by identifying a core problem in hybrid workspaces: space is often underutilized or poorly matched to task needs.
+
+            I started by collecting example schedules and translating them into a flexible data structure. Using Rhino and Grasshopper, I scripted a Python-based layout generator that interprets each individual's presence, role, and task priority.
+            
+            The tool uses a shortest-path algorithm to minimize total distance traveled while encouraging proximity between collaborators. It also visualizes task density by using larger nodes for more complex activities.
+            
+            Iterations focused on refining user input logic, spatial conflict detection, and the visual system used to read the generated layouts.</p>
+            <img src="assets/images/gif.gif" alt="Automating Workspaces Project" class="hero-image">
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Technical Details</h2>
+      <div class="section-content">
+        <p>The system utilizes:</p>
+        
+        <div class="tech-details">
+          <h3>Python-Scripted Spatial Generator</h3>
+          <p>Custom code embedded in Grasshopper reads user schedule data and generates optimized spatial layouts</p>
+
+          <h3>Shortest-Path Algorithm</h3>
+          <p>Calculates movement efficiency and proximity clustering between collaborators</p>
+
+          <h3>Task-Based Spatial Encoding</h3>
+          <p>Visual elements like node size and color map task intensity, collaboration needs, and workspace type</p>
+
+          <h3>Real-Time Feedback Loop</h3>
+          <p>Users can adjust schedules or task weights and immediately preview the resulting spatial change</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flipframe | CDP Portfolio</title>
+  <style>
+    body {
+      font-family: "Karla", sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #fff;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .header {
+      margin-bottom: 3rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      color: #666;
+      text-decoration: none;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .back-link:hover {
+      color: #111;
+    }
+
+    .project-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-subtitle {
+      font-size: 1.5rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+    }
+
+    .project-link {
+      display: inline-block;
+      font-size: 1.1rem;
+      color: #0066FF;
+      text-decoration: none;
+      margin-bottom: 2rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #0066FF;
+    }
+
+    .project-link:hover {
+      opacity: 0.8;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-content {
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 2rem 0;
+      border-radius: 12px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .image-grid img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .tech-details h3 {
+      color: #333;
+      font-size: 1.6rem;
+      margin: 2rem 0 1rem 0;
+      font-weight: 600;
+    }
+
+    .tech-details p {
+      color: #666;
+      font-size: 1.3rem;
+      margin: 0 0 2rem 0;
+      padding-left: 1.5rem;
+      border-left: 3px solid #eee;
+      line-height: 1.6;
+    }
+
+    .tech-details {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: #fafafa;
+      border-radius: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .project-title {
+        font-size: 2rem;
+      }
+      
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <a href="index.html" class="back-link">← Back to Projects</a>
+      <h1 class="project-title">Flipframe</h1>
+      <p class="project-subtitle">A kinetic object that simulates the rhythm of a day—mapping memory, motion, and light through mechanical transformation.</p>
+    </div>
+    <img src="assets/images/flipframe3.jpg" alt="Flipframe Project" class="hero-image">
+    <img src="assets/images/flipframe2.jpg" alt="Flipframe Project" class="hero-image">
+    <img src="assets/images/flipframe4.jpg" alt="Flipframe Project" class="hero-image">
+
+
+    <div class="section">
+      <h2 class="section-title">Overview</h2>
+      <div class="section-content">
+        <p>
+          <b>Flipframe</b> is a kinetic sculpture that explores memory and time through physical motion. Built as part of the Making Senses course, the project draws inspiration from analog display boards and flower-like mechanisms, translating daily rhythms—like a sunrise or a user's movement—into sculptural flipping actions.
+
+          The object functions like a living painting: mounted on a freestanding frame, its tiles flip at programmed intervals, revealing different surfaces and creating a constantly shifting visual narrative. Designed to move slowly and deliberately, Flipframe challenges the pace of digital time by grounding transitions in tactile motion.
+          
+          The project reconsiders what a display can be—not something to read, but something to feel. It maps abstract information like time, presence, and routine into mechanical gestures that evoke atmosphere more than data.
+          
+          Beyond its function, Flipframe becomes a meditation on sensory design: how sound, color, and movement can create meaning without words.
+          
+          It's not interactive in a conventional sense—but deeply responsive, inviting the viewer to pause and reflect with it.  </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Process</h2>
+      <div class="section-content">
+        <p>
+            Flipframe evolved from a series of studies in slow movement, mechanical response, and analog feedback. Inspired by 7-segment rack displays and kinetic petals, I prototyped multiple versions using laser-cut gears, 3D-printed arms, and servo motors.
+
+            The motion logic was structured around a compressed day cycle (e.g. a 24-hour sunpath simulated in 60 seconds). The tile flipping rhythm mirrors sunrise to sunset across a 10-step cycle.
+            
+            Material choice—translucent acrylics, PLA, and sound-dampened racks—was key to controlling not just motion but acoustic presence.</p>
+      </div>
+    </div>
+
+    <img src="assets/images/patentdrawing.jpg" alt="Flipframe Project">
+
+    <div class="section">
+      <h2 class="section-title">Demo Video</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/JBlZhPixxCI?si=4awF339u15i5hR1q" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Technical Details</h2>
+      <div class="section-content">
+        <p>The system utilizes:</p>
+        
+        <div class="tech-details">
+          <h3>Servo-Controlled Rack Mechanisms</h3>
+          <p>Custom-built rack-and-gear systems rotate individual tiles incrementally, creating a cascading flip motion. Inspired from The Rack Driven 7 Segment Display by engineezy.</p>
+
+          <h3>Time-Based Motor Programming</h3>
+          <p>Arduino and millis() logic simulate a 24-hour sun cycle using 10 programmed intervals, each triggering a physical transformation.</p>
+
+          <h3>Physical Interaction Components</h3>
+          <p>Optional sensors (e.g. FSR or PIR) enable motion-triggered responses, allowing the sculpture to react to presence.</p>
+
+          <h3>Modular Tile Layout</h3>
+          <p>Each tile is laser-cut or 3D-printed and color-coded. Combinations reveal different visual states depending on rotation and sequence.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

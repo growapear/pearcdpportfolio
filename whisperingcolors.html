@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nonlinear Instruction | Pear J.</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "Karla", sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #fff;
+      color: #111;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Header Navigation */
+    .header {
+      margin-bottom: 4rem;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex: 1;
+    }
+
+    .nav-left a {
+      text-decoration: none;
+      color: #111;
+      margin-left: 2rem;
+    }
+
+    .workplay-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      gap: 2rem;
+    }
+
+    .workplay-nav a {
+      text-decoration: none;
+      color: #111;
+      font-size: 1.2rem;
+      margin-right: 2rem;
+    }
+
+    .workplay-nav span {
+      font-size: 1.2rem;
+      color: #111;
+    }
+
+    .nav-right {
+      font-size: 2.5rem;
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .logo {
+      width: 160px;
+      height: auto;
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-top: 0;
+      padding: 4rem 0;
+    }
+
+    /* Project Header */
+    .project-header {
+      margin-bottom: 6rem;
+    }
+
+    .project-title {
+      font-size: 4rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      color: #1a1a1a;
+    }
+
+    .project-subtitle {
+      font-size: 1.5rem;
+      color: #666;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      line-height: 1.4;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      color: #999;
+    }
+
+    .meta-value {
+      color: #1a1a1a;
+      font-weight: 500;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      margin-bottom: 6rem;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      position: relative;
+    }
+
+    .hero-image {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      margin: 0;
+      display: block;
+    }
+
+    .hero-caption {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-style: italic;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-video {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Content Sections */
+    .content-section {
+      margin-bottom: 6rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: #1a1a1a;
+    }
+
+    .section-content {
+      font-size: 1.1rem;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    .section-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-content strong {
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    .section-content h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 2rem 0 1rem 0;
+    }
+
+    .section-content ul {
+      margin: 1rem 0 1.5rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .section-content li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .section-image {
+      display: block;
+      margin: 2rem auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-video {
+      display: block;
+      margin: 2rem auto;
+      left: 50%;
+      max-width: 600px;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Image Grid */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+      margin: 3rem 0;
+    }
+
+    .image-grid img {
+      width: 100%;
+      border-radius: 12px;
+      transition: transform 0.2s ease;
+    }
+
+    .image-grid img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Video Section */
+    .video-section {
+      margin: 4rem 0;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 16px;
+      margin: 2rem 0;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Project Links */
+    .project-links {
+      display: flex;
+      gap: 2rem;
+      margin: 3rem 0;
+      flex-wrap: wrap;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: #1a1a1a;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .project-link:hover {
+      background: #333;
+      transform: translateY(-2px);
+    }
+
+    /* Technical Details */
+    .tech-details {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+    }
+
+    .tech-details h3 {
+      color: #1a1a1a;
+      font-size: 1.2rem;
+      margin: 1.5rem 0 0.5rem 0;
+      font-weight: 600;
+    }
+
+    .tech-details h3:first-child {
+      margin-top: 0;
+    }
+
+    .tech-details p {
+      color: #666;
+      margin: 0 0 1rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid #e5e5e5;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .project-title {
+        font-size: 2.5rem;
+      }
+      
+      .project-subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .project-meta {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      
+      .hero-image {
+        height: 400px;
+      }
+      
+      .nav {
+        padding: 0 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .project-title {
+        font-size: 2rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .project-links {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <div class="nav-left">
+        <img src="assets/images/pearj.svg" alt="Pear J logo" class="logo" />
+        <a href="about.html">About</a>
+        <a href="assets/images/panyanus_resume.pdf">Resume</a>
+      </div>
+      <div class="workplay-nav">
+        <a href="work.html">Work</a>
+        <span>//</span>
+        <a href="play.html">Play</a>
+      </div>
+      <div class="nav-right">👀</div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <!-- Project Header -->
+      <div class="project-header">
+        <h1 class="project-title">Whispering Colors</h1>
+        <p class="project-subtitle">an interactive exploration of color, gesture, and storytelling through real-time interaction and machine learning.</p>
+        
+        <div class="project-meta">
+          <div class="meta-item">
+            <span class="meta-label">Role</span>Interactive Artist, Developer</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Timeline</span>
+            <span class="meta-value">3 Months</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Year</span>
+            <span class="meta-value">2024</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Project</span>
+            <span class="meta-value">MADE Brown-Risd Project</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section - Full Width -->
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <img src="assets/images/whisperingcolors.gif" alt="Whispering Colors" class="hero-image">
+
+      </div>
+
+    <div class="container">
+      <!-- Project Links -->
+      <div class="project-links">
+
+      </div>
+
+      <!-- Overview Section -->
+      <div class="content-section">
+        <div class="section-content">
+        <p>The concept behind <b>"Whispering Colors"</b> is to create a living canvas where
+            light is not only seen but felt and controlled. This installation transforms
+            light into an interactive element that responds to and evolves with viewer
+            participation. It’s an experiment in giving form to the intangible, allowing
+            participants to 'sculpt' light through their movements, creating a deeply
+            personal and ever-changing art experience.</p>
+            <div class="hero-section">
+<img src="assets/images/whispering1hand.gif" alt="Whispering Colors" class="hero-image">              
+<video class="hero-video" src="assets/images/Whispering color-2hand.mov" autoplay loop muted playsinline controls></video>
+        
+              </div>
+        
+        <p>The project lies in my fascination with the transformational power of light
+            and its profound impact on human perception. This project is inspired by James
+            Turrell's mastery of sculpting space and emotion through illumination,
+            translating these elements into a digital and interactive medium. My goal is
+            to bridge the gap between physical light installations and digital
+            interactivity, creating a platform where art becomes a dialogue between the
+            creator, the viewer, and the medium itself.</p>
+        
+        <p>This project allows me to explore another layer of my career as a designer. It
+            is an opportunity for me to practice using new tools to hone my technical
+            skills with my philosophical inquiries into the nature of interaction and
+            perception. It challenges me to apply and extend my understanding of design
+            and technology in creating an immersive, responsive environment that not only
+            entertains but also engages on an emotional and cognitive level.</p>
+
+        <p>I aim to evoke a sense of agency and creativity in participants, encouraging
+            them to engage actively with the installation. The desired emotional response
+            is multifaceted—ranging from tranquility and meditative calm as viewers
+            observe the gentle flow of colors, to exhilaration and empowerment as they
+            realize their movements can shape the visual output. Ultimately, the
+            installation should leave participants with a renewed appreciation for the
+            playful and powerful role of light in shaping our perceived reality.</p>
+
+        <p>Presenting this project in a large-scale, interactive digital
+            mural where movements directly translate into visual changes. I want to
+            emphasize the impact of light that allows the interactive experience to be
+            accessible and engaging for a broad audience.</p>
+        
+         <p>For me, this project is more than an assignment. It is a platform for
+                exploring digital interactivity as a form of expressive, personal, and
+                communal art. It redefines the art space as a collaborative, transformative
+                environment. This project is crucial for my development as a designer who
+                bridges the digital with the tangible, pushing the boundaries of how art is
+                created and experienced.</p>
+
+                <div class="media-row">
+                    <div class="media-images">
+                      <img src="assets/images/whisperprocess1.jpg" alt="In Progress" class="section-image">
+                      <img src="assets/images/whisperprocess2.jpg" alt="In Progress" class="section-image">
+                      <img src="assets/images/whisperprocess3.jpg" alt="In Progress" class="section-image">
+                      <img src="assets/images/whisperprocess4.jpg" alt="In Progress" class="section-image">
+
+                    </div>
+                  </div>
+        
+
+        </div>
+     
+ <!-- References & Acknowledgments Section -->
+      <div class="content-section">
+        <div class="section-content">
+          
+          <div class="tech-details">
+   
+            <h3>Tools & Technologies</h3>
+            <p>Kinect - Gesture Tracking</p>
+            <p>TouchDesigner - Visual Effects</p>
+            <p>P5.js - Web-based Visualization</p>
+            <h3>Resources</h3>
+            <p>https://www.youtube.com/watch?v=9RArP9FovQo
+                <br>https://www.reddit.com/r/TouchDesigner/comments/ugn069/using_kinect_for_the_first_time/
+                <br>https://derivative.ca/tags/kinect
+                <br>https://derivative.ca/UserGuide/Kinect1
+                <br>https://forum.derivative.ca/t/solution-sort-of-kinect-v2-on-apple-silicon-mac/363754
+                <br>https://www.youtube.com/watch?v=Cx4Ellaj6kk
+                <br>https://www.youtube.com/watch?v=9RArP9FovQo
+                <br>https://community.troikatronix.com/topic/7822/answered-kinect-v1-on-mac-mini-m1
+                <br>https://www.are.na/panyanus-jansomwong-xysxfgky8zc/pear-csvdnf92eyi
+                <br>https://www.youtube.com/watch?v=DpGHWa2gOcc&t=1s
+                <br>https://no-kinect.netlify.app/?wsURL=wss://my-sweet-socket-bdd628bcd853.herokuapp.com:443</p>
+
+          </div>
+        </div>
+      </div>
+
+
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

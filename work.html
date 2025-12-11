@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pear J. | Works</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: "Karla", sans-serif;
+      background: #ffffff;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: white;
+      border-bottom: 1px solid #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex: 1;
+    }
+
+    .workplay-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      gap: 2rem;
+    }
+
+    .nav-right {
+      font-size: 1.5rem;
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .logo {
+      width: 160px;
+      height: auto;
+    }
+
+    .profile-emoji-inline {
+      height: 5rem;
+      width: auto;
+      margin: 0 0 -0.3rem 0;
+      vertical-align: baseline;
+    }
+
+    header a {
+      text-decoration: none;
+      color: #111;
+      margin-left: 2rem;
+    }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 10px;
+      padding: 0;
+      max-width: 100%;
+      margin: 0;
+      background: #f5f5f5;
+      height: 100vh;
+    }
+
+    .item {
+      background: #e8e8e8;
+      border-radius: 18px;
+      overflow: hidden;
+      border: none;
+      transition: all 0.3s ease;
+      position: relative;
+      box-shadow: none;
+      min-height: 600px;
+      cursor: pointer;
+    }
+
+    .item:hover {
+      transform: scale(1.02);
+    }
+
+    .item:hover .hover-overlay {
+      opacity: 1;
+    }
+
+    .hover-overlay {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .hover-project-name {
+      background: white;
+      color: #111;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-align: left;
+      padding: 10px 14px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin: 0;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .hover-project-category {
+      background: white;
+      color: #666;
+      font-size: 0.85rem;
+      text-align: left;
+      padding: 10px 14px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin: 0;
+      white-space: nowrap;
+    }
+
+
+    .thumb {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      background-color: #e8e8e8;
+    }
+    
+    .hidden {
+      display: none;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 15% auto;
+      padding: 30px;
+      border-radius: 12px;
+      width: 80%;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .project-name {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #111;
+      margin: 0;
+    }
+
+    .project-category {
+      background: #f8f8f8;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: #666;
+      display: inline-block;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 15px;
+    }
+
+    .close:hover {
+      color: #111;
+    }
+
+    @media screen and (max-width: 600px) {
+      .grid {
+        padding: 20px;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav-left">
+    <img src="assets/images/pearj.svg" alt="Pear J logo" class="logo" />
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="workplay-nav">
+    <a href="work.html" style="text-decoration:none; color:#111; font-size:1.2rem;"><b>Work</b></a>
+    <span style="font-size:1.2rem; color:#111;">//</span>
+    <a href="play.html" style="text-decoration:none; color:#111; font-size:1.2rem;">Play</a>
+  </div>
+  <div class="nav-right">👀</div>
+</header>
+
+<!-- WORK SECTION -->
+<section id="workSection" class="grid">
+  <div class="item" onclick="window.location.href='crafticulate.html'">
+    <video class="thumb" src="assets/images/crafticulate-thumbnail.mp4" autoplay loop muted playsinline></video>
+    <div class="hover-overlay">
+      <div class="hover-project-name">Crafticulate</div>
+      <div class="hover-project-category">Experience Design</div>
+      <div class="hover-project-category">Machine Learning, UI, Development, UX, Concept, 3D Modeling</div>
+    </div>
+  </div>
+  <div class="item" onclick="window.location.href='nonlinear-instruction.html'">
+    <video class="thumb" src="assets/images/nonlinear.mp4" autoplay loop muted playsinline></video>
+    <div class="hover-overlay">
+      <div class="hover-project-name">Interactive Instruction on: How to Make a Bowl</div>
+      <div class="hover-project-category">Experience Design</div>
+      <div class="hover-project-category">Hand Tracking System, UI, Development</div>
+    </div>
+  </div>
+  <div class="item" onclick="window.location.href='digital-tapestry.html'">
+    <video class="thumb" src="assets/images/digitaltapestry.mp4" autoplay loop muted playsinline></video>
+    <div class="hover-overlay">
+      <div class="hover-project-name">Digital Tapestry</div>
+      <div class="hover-project-category">Web Storytelling</div>
+      <div class="hover-project-category">Development, UI, UX, Concept</div>
+    </div>
+  </div>
+  <div class="item" onclick="window.location.href='emobloom.html'">
+    <video class="thumb" src="assets/images/emobloom.mp4" autoplay loop muted playsinline></video>
+    <div class="hover-overlay">
+      <div class="hover-project-name">Emobloom</div>
+      <div class="hover-project-category">Physical Product, Application</div>
+    </div>
+  </div>
+  <div class="item" onclick="window.location.href='flipframe.html'">
+    <img class="thumb" src="assets/images/flipframe2.jpg" alt="Flipframe">
+    <div class="hover-overlay">
+      <div class="hover-project-name">Flipframe</div>
+      <div class="hover-project-category">Kinetic installation, rack-driven visual storytelling</div>
+    </div>
+  </div>
+  <div class="item" onclick="window.location.href='https://publications.risd.edu/grad-show-2024-design-engineering/chromacalm'">
+    <video class="thumb" src="assets/images/chromacalm.mp4" autoplay loop muted playsinline></video>
+    <div class="hover-overlay">
+      <div class="hover-project-name">Chromacalm</div>
+      <div class="hover-project-category">AR glasses that adapt based on focus using ML</div>
+    </div>
+  </div>
+  <div class="item" onclick="window.location.href='hybrid-reality.html'">
+    <video class="thumb" src="assets/images/hybridreality.mp4" autoplay loop muted playsinline></video>
+    <div class="hover-overlay">
+      <div class="hover-project-name">Drinking experience in VR</div>
+      <div class="hover-project-category">Built environment x VR experience</div>
+    </div>
+  </div>
+  <div class="item" onclick="window.location.href='robotasfurniture.html'">
+    <video class="thumb" src="assets/images/robotasfurniture.mp4" autoplay loop muted playsinline></video>
+    <div class="hover-overlay">
+      <div class="hover-project-name">Robot as Furniture</div>
+      <div class="hover-project-category">Furniture Design, Prototyping, Automation</div>
+    </div>
+  </div>
+  <div class="item" onclick="window.location.href='https://medium.com/@pj2445/automating-flexible-workspaces-a-schedule-based-layout-generation-for-everyone-cdbcfd71978d'">
+    <img class="thumb" src="assets/images/automateflex.gif" alt="Automating Flexible Workspace">
+    <div class="hover-overlay">
+      <div class="hover-project-name">Automating Flexible Workspace</div>
+      <div class="hover-project-category">AI x Grasshopper design tool for layout generation</div>
+    </div>
+  </div>
+  <div class="item" onclick="window.location.href='https://www.jumeirah.com/en/stay/dubai/jumeirah-marsa-al-arab/dining/marsa-al-arab-rialto-bar'">
+    <img class="thumb" src="assets/images/rialto.jpg" alt="Jumeirah Rialto Bar">
+    <div class="hover-overlay">
+        <div class="hover-project-name">Jumeirah Marsa Al Arab Rialto Bar</div>
+        <div class="hover-project-category">Hospitality Interior, Furniture Design</div>
+    </div>
+  </div>
+  <div class="item" onclick="window.location.href='https://www.jumeirah.com/en/stay/dubai/jumeirah-marsa-al-arab/dining/marsa-al-arab-the-bombay-club'">
+    <img class="thumb" src="assets/images/jumeirah.jpg" alt="Jumeirah Bombay Club">
+    <div class="hover-overlay">
+      <div class="hover-project-name">Jumeirah Marsa Al Arab Bombay Club</div>
+      <div class="hover-project-category">Hospitality Interior, Furniture Design</div>
+    </div>
+  </div>
+  <div class="item" onclick="window.location.href='https://www.avroko.com/work/centara-reserve'">
+    <img class="thumb" src="assets/images/centara.jpg" alt="Centara">
+    <div class="hover-overlay">
+      <div class="hover-project-name">Centara Reserved Samui Lobby</div>
+      <div class="hover-project-category">Hospitality Interior, Furniture Design</div>
+    </div>
+  </div>
+  <div class="item" onclick="window.location.href='shangrila-lost-paradise.html'">
+    <img class="thumb" src="assets/images/shangrila.jpg" alt="Shangri La">
+    <div class="hover-overlay">
+      <div class="hover-project-name">Shangri La, The Lost Paradise?</div>
+      <div class="hover-project-category">Urban Fabric Layer System</div>
+      <div class="hover-project-category">Architectural Design, Storytelling</div>
+    </div>
+  </div>
+  <div class="item" onclick="window.location.href='rajasthan.html'">
+    <img class="thumb" src="assets/images/rajasthan.jpg" alt="Rajasthan">
+    <div class="hover-overlay">
+      <div class="hover-project-name">Rajasthan, A Plug-in City</div>
+      <div class="hover-project-category">A Plug-in City</div>
+      <div class="hover-project-category">Architectural Design</div>
+    </div>
+  </div>
+  <div class="item" onclick="window.location.href='https://spacesaloon.com/Ban-Bat-Gate'">
+    <img class="thumb" src="assets/images/banbat.jpeg" alt="Baan bat">
+    <div class="hover-overlay">
+      <div class="hover-project-name">Baan bat</div>
+      <div class="hover-project-category">Design for Community</div>
+      <div class="hover-project-category">Entrance way, Architectural Design, Storytelling</div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emobloom | Pear J.</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "Karla", sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #fff;
+      color: #111;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Header Navigation */
+    .header {
+      margin-bottom: 4rem;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex: 1;
+    }
+
+    .nav-left a {
+      text-decoration: none;
+      color: #111;
+      margin-left: 2rem;
+    }
+
+    .workplay-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      gap: 2rem;
+    }
+
+    .workplay-nav a {
+      text-decoration: none;
+      color: #111;
+      font-size: 1.2rem;
+      margin-right: 2rem;
+    }
+
+    .workplay-nav span {
+      font-size: 1.2rem;
+      color: #111;
+    }
+
+    .nav-right {
+      font-size: 2.5rem;
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .logo {
+      width: 160px;
+      height: auto;
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-top: 0;
+      padding: 4rem 0;
+    }
+
+    /* Project Header */
+    .project-header {
+      margin-bottom: 6rem;
+    }
+
+    .project-title {
+      font-size: 4rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      color: #1a1a1a;
+      max-width: 800px;
+      margin-left: 0;
+      margin-right: 0;
+      text-align: left;
+    }
+
+    .project-subtitle {
+      font-size: 1.5rem;
+      color: #666;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      line-height: 1.4;
+      margin-left: 0;
+      margin-right: 0;
+      text-align: left;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      color: #999;
+    }
+
+    .meta-value {
+      color: #1a1a1a;
+      font-weight: 500;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      margin-bottom: 6rem;
+      width: 100vw;
+      height: 800;
+      margin-left: calc(-50vw + 50%);
+      position: relative;
+    }
+
+    .hero-image {
+      width: 100vw;
+      height: 60vh;
+      object-fit: cover;
+      margin: 0;
+      display: block;
+    }
+
+    .hero-caption {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-style: italic;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-video {
+      width: 100%;
+      height: 800;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Content Sections */
+    .content-section {
+      margin-bottom: 6rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: #1a1a1a;
+      text-align: left;
+      max-width: 800px;
+      margin-left: 2rem;
+      margin-right: auto;
+    }
+
+    .section-content {
+      font-size: 1.1rem;
+      color: #333;
+      line-height: 1.7;
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .section-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-content strong {
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    .section-content h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 2rem 0 1rem 0;
+    }
+
+    .section-content ul {
+      margin: 1rem 0 1.5rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .section-content li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .section-image {
+      display: block;
+      margin: 2rem auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Full-width image styling inspired by Henning Birgersson */
+    .full-width-image {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-bottom: 4rem;
+    }
+
+    .full-width-image .section-image {
+      width: 100vw;
+      height: 60vh;
+      object-fit: cover;
+      border-radius: 0;
+      margin: 0;
+      box-shadow: none;
+    }
+
+    /* Feature item styling - alternating text and image */
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      margin-bottom: 6rem;
+    }
+
+    .feature-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .feature-text {
+      flex: 1;
+    }
+
+    .feature-image {
+      flex: 1;
+    }
+
+    .feature-text h3 {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Section number styling - inspired by Henning Birgersson */
+    .section-number {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #f0f0f0;
+      color: #333;
+      font-size: 1.5rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 3rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Two-column layout styling */
+    .two-column-layout {
+      display: flex;
+      gap: 4rem;
+      align-items: flex-start;
+      max-width: 2000px;
+      margin: 0 auto;
+    }
+
+    /* Two-column product layout styling */
+    .two-columnproduct-layout {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      justify-content: center;
+    }
+
+    .two-columnproduct-layout .section-image {
+      flex: 1;
+      width: 100%;
+      max-width: none;
+      height: 800px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    /* Feature grid styling */
+    .feature-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 3rem;
+      align-items: stretch;
+      margin-top: 3rem;
+    }
+
+    .feature-steps-section .section-content {
+      max-width: 1100px;
+    }
+
+    .feature-step {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      text-align: left;
+      background: #fafafa;
+      border: 1px solid #ebebeb;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 18px 45px rgba(17, 17, 17, 0.08);
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid #d9d9d9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .step-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0;
+      color: #1a1a1a;
+    }
+
+    .step-caption {
+      font-size: 1rem;
+      color: #555;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .text-column {
+      flex: 1;
+      text-align: left;
+    }
+
+    .visual-column {
+      flex: 1;
+    }
+
+    /* Phone mockup styling */
+    .mockup-container {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mockup-container.single-image {
+      justify-content: flex-start;
+    }
+
+    .mockup-container.single-image .phone-mockup {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 24px;
+    }
+
+    /* Wider visual only for a specific showcase */
+    .visual-column.big-visual {
+      flex: 1;
+    }
+
+    .mockup-container.big-image {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    .mockup-container.big-image .poster-image {
+      width: 100%;
+      max-width: 100% !important;
+      border-radius: 24px;
+      box-shadow: 0 18px 45px rgba(17, 17, 17, 0.10);
+    }
+
+    .mockup-container.big-image .poster-image + .poster-image {
+      margin-top: 1.5rem;
+    }
+
+    .phone-mockup {
+      width: 200px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Poster stack styling for iteration boards */
+    .poster-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .poster-image {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 16px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Iteration item styling */
+    .iteration-item {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      margin-bottom: 6rem;
+    }
+
+    .iteration-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .iteration-text {
+      flex: 1;
+    }
+
+    .iteration-image {
+      flex: 1;
+    }
+
+    .iteration-text h3 {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Image Grid */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .image-grid img {
+      width: 100%;
+      border-radius: 12px;
+      transition: transform 0.2s ease;
+    }
+
+    .image-grid img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Video Section */
+    .video-section {
+      margin: 4rem 0;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 16px;
+      margin: 2rem 0;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Project Links */
+    .project-links {
+      display: flex;
+      gap: 2rem;
+      margin: 3rem 0;
+      flex-wrap: wrap;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: #1a1a1a;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .project-link:hover {
+      background: #333;
+      transform: translateY(-2px);
+    }
+
+    /* Technical Details */
+    .tech-details {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+    }
+
+    .tech-details h3 {
+      color: #1a1a1a;
+      font-size: 1.2rem;
+      margin: 1.5rem 0 0.5rem 0;
+      font-weight: 600;
+    }
+
+    .tech-details h3:first-child {
+      margin-top: 0;
+    }
+
+    .tech-details p {
+      color: #666;
+      margin: 0 0 1rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid #e5e5e5;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .project-title {
+        font-size: 2.5rem;
+      }
+      
+      .project-subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .project-meta {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      
+      .hero-image {
+        height: 400px;
+      }
+      
+      .nav {
+        padding: 0 1rem;
+      }
+
+      /* Mobile responsive for feature and iteration items */
+      .feature-item,
+      .iteration-item {
+        flex-direction: column !important;
+        gap: 2rem;
+        margin-bottom: 4rem;
+      }
+
+      .feature-text,
+      .iteration-text {
+        order: 1;
+      }
+
+      .feature-image,
+      .iteration-image {
+        order: 2;
+      }
+
+      .feature-steps-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .full-width-image .section-image {
+        height: 40vh;
+      }
+
+      /* Mobile responsive for two-column layout */
+      .two-column-layout {
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .visual-column.big-visual {
+        flex: 1;
+      }
+
+      .mockup-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .phone-mockup {
+  width: 600px;      /* bigger image */
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+.phone-mockup--wide {
+  width: 320px;
+}
+      .section-number {
+        width: 200px;
+        height: 200px;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .poster-stack {
+        gap: 1.5rem;
+      }
+
+      .poster-image {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .project-title {
+        font-size: 2rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .project-links {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <div class="nav-left">
+        <img src="assets/images/pearj.svg" alt="Pear J logo" class="logo" />
+        <a href="about.html">About</a>
+        <a href="assets/images/panyanus_resume.pdf">Resume</a>
+      </div>
+      <div class="workplay-nav">
+        <a href="work.html">Work</a>
+        <span>//</span>
+        <a href="play.html">Play</a>
+      </div>
+      <div class="nav-right">👀</div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <!-- Project Header -->
+      <div class="project-header">
+        <h1 class="project-title">Emobloom</h1>
+        <p class="project-subtitle">A testament to the symbiotic relationship between humans and nature. It's not just about growing a plant; it's about growing with it.</p>
+        
+        <div class="project-meta">
+          <div class="meta-item">
+            <span class="meta-label">Role</span>
+            <span class="meta-value">Chief of Digital and Concept Design</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Timeline</span>
+            <span class="meta-value">3 Months</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Year</span>
+            <span class="meta-value">2023</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Project</span>
+            <span class="meta-value">MADE Brown-Risd Project</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+      <!-- Hero Section - Full Width -->
+      <div class="hero-section">
+        <video src="assets/images/emobloom.mp4" alt="Emobloom Product Showcase" class="hero-image" autoplay muted loop></video>
+        <div class="hero-caption">
+          Emobloom: Where greenery meets the gentle flow of time
+        </div>
+      </div>
+
+      <!-- Final Product Showcase -->
+      <!-- Overview Section -->
+      <div class="content-section">
+        <div class="section-content">
+          <p><strong>Emobloom</strong> is a testament to the symbiotic relationship between humans and nature. It's not just about growing a plant; it's about growing with it. Dive deep into this enriching journey and discover how, with Emobloom, every moment becomes a memory, every emotion a shared experience.</p>
+          
+          <p>We aim to examine how a reimagined product can deepen the emotional bond between humans and nature, enriching the symbiotic relationship that exists between them. The project combines a smart physical planter with an interactive hourglass mechanism, creating a holistic experience focused on plant well-being and mindful time management.</p>
+          
+          <p>At its core, Emobloom transforms routine plant care into an opportunity for self-reflection and emotional regulation, fostering a unique bond between user and nature through the gentle flow of time and the nurturing of life.</p>
+        </div>
+      </div>
+        <div class="two-columnproduct-layout">
+          <img src="assets/images/emobloomproduct.png" alt="Final Emobloom Product" class="section-image">
+          <img src="assets/images/emobloomapp.jpg" alt="Final Emobloom App" class="section-image">
+
+        </div>
+    
+      </div>
+
+      <!-- Product Features Section -->
+      <div class="content-section feature-steps-section">
+        <div class="section-content">
+          <div class="feature-steps-grid">
+            <div class="feature-step">
+              <div class="step-header">
+                <div class="step-number">1</div>
+                <h3 class="step-title">🌱 Serene Swirl</h3>
+              </div>
+              <p class="step-caption">Where greenery meets the gentle flow of time. The rotating planter acts as a tactile anchor that keeps your plant in a calm, meditative orbit.</p>
+            </div>
+            <div class="feature-step">
+              <div class="step-header">
+                <div class="step-number">2</div>
+                <h3 class="step-title">⏰ Time in Motion</h3>
+              </div>
+              <p class="step-caption">A mindful hourglass transforms plant tending into a 3–5 minute ritual, prompting restorative breaks and helping you reset your tempo.</p>
+            </div>
+            <div class="feature-step">
+              <div class="step-header">
+                <div class="step-number">3</div>
+                <h3 class="step-title">😊 Emoji Display</h3>
+              </div>
+              <p class="step-caption">An emotive face translates plant data into an approachable mood indicator, encouraging empathy and a deeper sense of companionship.</p>
+            </div>
+            <div class="feature-step">
+              <div class="step-header">
+                <div class="step-number">4</div>
+                <h3 class="step-title">💡 Ambient Signals</h3>
+              </div>
+              <p class="step-caption">Integrated LED lighting delivers ambient pulses that mirror plant health, enriching your workspace with subtle cues and atmospheric glow.</p>
+            </div>
+            <div class="feature-step">
+              <div class="step-header">
+                <div class="step-number">5</div>
+                <h3 class="step-title">💬 In-App Experience</h3>
+              </div>
+              <p class="step-caption">The companion app tracks mood check-ins, journaling prompts, and stress patterns over time—turning plant care into a mirror for emotional well-being.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Section 1: Research & Discovery -->
+      <div class="content-section">
+        <div class="section-number">1</div>
+        <div class="two-column-layout">
+          <div class="text-column">
+            <h2 class="section-title">Research & Discovery</h2>
+            <p>Our research began with 28 interviews studying how customers form emotional bonds with existing products. The key findings revealed that people have no emotional connection to their plants and do not know the name of their plants. They want plants mainly for aesthetic benefits and seeing growth, while spending minimal time on care.</p>
+            
+            <p>However, people do like the pride that comes with taking good care of plants and grow a sense of responsibility over them. Desk areas were identified as common stress points, presenting an opportunity for intervention.</p>
+            
+            <p>We explored emotive design strategies that celebrate our kinship with the world and create ongoing relationships between people and plants. We studied "Braided Sweetgrass" and design for attachment principles, finding that functions provoking deeper bonding between human and plant—such as personalized plant quizzes, memory leaflets, and diary features—were most effective.</p>
+          </div>
+          <div class="visual-column">
+            <div class="mockup-container single-image">
+              <img src="assets/images/emobloom-research-light.jpg" alt="Research Findings Light Mode" class="phone-mockup">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: User Definition -->
+      <div class="content-section">
+        <div class="section-number">2</div>
+        <div class="two-column-layout">
+          <div class="text-column">
+            <h2 class="section-title">User Definition & Testing</h2>
+            <p>We clustered every interview insight into a sprawling feature matrix, grouping provocations like “sentient plant companion,” “augmented rituals,” and “memory-making moments.” The board became our north star for emotional resonance.</p>
+            
+            <p>From there we ran a create–record–review loop: sketching dozens of form factors, critiquing them as a team, then recombining the strongest gestures into new hybrids. Each pass moved us closer to an hourglass-inspired ecosystem.</p>
+            
+            <p>We even prototyped the name. “Emo Bloom” rose to the top because it captures the marriage of feeling and growth—shorthand for the emotional bond we’re nurturing between people and their plants.</p>
+          </div>
+          <div class="visual-column">
+            <div class="mockup-container single-image">
+              <img src="assets/images/emobloom-user-light.jpg" alt="User Persona Light Mode" class="phone-mockup">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Section 3: Concept Development & Refinement -->
+      <div class="content-section">
+        <div class="section-number">3</div>
+        <div class="two-column-layout">
+          <div class="text-column">
+            <h2 class="section-title">Concept Development & Refinement</h2>
+            <p>We defined our primary user as "The urban apartment dweller" - a 28-year-old graphic designer living in a compact one-bedroom apartment. She enjoys urban lifestyle but finds her small living space limiting, especially when it comes to bringing nature indoors.</p>
+              
+            <p>She views taking care of plants as a way to bring a sense of nature into her home and sees them as more than just decor – they are her companions in daily life. She seeks to create a small indoor garden to bring tranquility and natural beauty to her home workstation, needing guidance as a beginner gardener.</p>
+            
+            <p>Our research also investigated how plants reduce stress and increase well-being. Studies revealed that when looking at real plants, participants exhibited significantly higher 'comfort,' 'natural,' and 'relaxed' scores, along with an increase in positive mood conditions.</p>
+          </div>
+          <div class="visual-column">
+            <div class="mockup-container single-image">
+              <img src="assets/images/emobloom-concept-light.jpg" alt="User Persona Light Mode" class="phone-mockup">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Section 4: Iterations & System Journey -->
+    <div class="content-section">
+      <div class="section-number">4</div>
+      <div class="two-column-layout">
+        <div class="text-column">
+          <h2 class="section-title">Iterations: Physical</h2>
+          <h3>Physical Ecosystem Refinement</h3>
+          <p>The physical system evolved through deliberate fidelity jumps. Early foam mockups validated the capsule silhouette and how people would cradle the planter. We shifted into CNC and 3D-printed housings to pressure-test proportions, hourglass visibility, and the magnetized sand timer. Each round pushed the body closer to a single, seamless object that feels calm on a desk yet animated in motion.</p>
+          <p>These boards capture how rear charging, sand reservoirs, and the rotating cradle were resolved. Feedback focused on stability, tactility, and the subtle “companionship” sensation people reported when the planter slowly spun beside them. Every tweak nudged Emobloom toward a form that broadcasts care rather than gadgetry.</p>
+        </div>
+        <div class="visual-column big-visual">
+          <div class="mockup-container single-image big-image">
+            <img src="assets/images/emobloom-physical-iterations1.jpg" alt="Emobloom physical iteration boards" class="poster-image">
+            <img src="assets/images/emobloom-physical-iterations2.jpg" alt="Emobloom physical iteration boards" class="poster-image">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Section 5: Iterations & System Journey -->
+    <div class="content-section">
+      <div class="section-number">5</div>
+      <div class="two-column-layout">
+        <div class="text-column">
+          <h2 class="section-title">Iterations: Digital</h2>
+          <h3>Digital Companion Journey</h3>
+          <p>In parallel, we mapped a companion app that mirrors the physical experience. Lo-fi user journeys clarified how onboarding, mood prompts, and care checkpoints weave together. High-fidelity UI explorations then translated those flows into a lavender, breathing interface that echoes the product’s softness.</p>
+          <p>The final journey diagram charts each touchpoint—Bluetooth pairing, biometric scans, habit loops, and reflection prompts. It ensures the app doesn’t compete with the object; it amplifies it. Emobloom ultimately lives as both a tangible companion and a digital coach, keeping the plant-person relationship active throughout the day.</p>
+        </div>
+      <div class="visual-column big-visual">
+          <div class="mockup-container single-image big-image">
+            <img src="assets/images/emobloom-digital-iterations.jpg" alt="Emobloom digital iteration boards" class="poster-image">
+          </div>
+        </div>
+      </div>
+    </div>
+      <!-- Demo Video Section -->
+      <div class="content-section">
+        <h2 class="section-title">Demo Video</h2>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/jumuBT046LU?si=o_KGnVeuVeYaPJy8" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      
+      <!-- Technical Details Section -->
+      <div class="content-section">
+        <div class="section-content">
+          <p>The system utilizes:</p>
+          
+          <div class="tech-details">
+            <h3>Product Dimensions & Specifications</h3>
+            <p>Product Width: 104mm, Product Height: 220mm, Pot Width: 90mm, Hourglass Width: 38mm, Hourglass Height: 180mm</p>
+
+            <h3>Rotating Mechanism</h3>
+            <p>Custom-designed rotating system that allows the plant pot to gently rotate within the hourglass structure, creating a mesmerizing visual experience</p>
+
+            <h3>Emoji Display System</h3>
+            <p>Small circular screen (1.6mm thick) that displays emojis reflecting the plant's current state and mood, creating an emotional connection</p>
+
+            <h3>LED Integration</h3>
+            <p>LED array running on 5V, 2A, with outer layer 1mm thick, connected via Bluetooth and controlled through a pre-built app</p>
+
+            <h3>Hourglass Timer</h3>
+            <p>Integrated sand timer mechanism providing a 3-5 minute duration for mindful breaks and plant care sessions</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- References & Acknowledgments Section -->
+      <div class="content-section">
+        <div class="section-content">
+          
+          <div class="tech-details">
+            <h3>Project Team</h3>
+            <p>Pear Jansomwong - Chief of Digital and Concept Design</p>
+            <p>Lisa Lo - Chief Maker/Engineer</p>
+            <p>Merlene Mo - Chief of Industrial Design</p>
+
+            <h3>Research & Design Process</h3>
+            <p>28 user interviews conducted to understand emotional bonds with products</p>
+            <p>Literature review including "Braided Sweetgrass" and design for attachment principles</p>
+            <p>Multiple design iterations using cardboard prototypes and 3D printing</p>
+            <p>User testing with 1:1 scale models to refine proportions and features</p>
+
+            <h3>Concept Development</h3>
+            <p>The name "Emobloom" combines "Emo" from emotions and "Bloom" from the growth and blossoming of plants. It highlights the emotional connection between users and their plants, emphasizing that every moment with a plant is a journey filled with feelings and growth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html> 

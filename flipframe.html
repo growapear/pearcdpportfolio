@@ -3,87 +3,262 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Flipframe | CDP Portfolio</title>
+  <title>Flipframe | Pear J.</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+    
     body {
       font-family: "Karla", sans-serif;
       margin: 0;
       padding: 2rem;
       background-color: #fff;
       color: #111;
-      line-height: 1.6;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem;
+      padding: 0 2rem;
     }
 
+    /* Header Navigation */
     .header {
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
     }
 
-    .back-link {
-      display: inline-flex;
+    .nav {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      color: #666;
-      text-decoration: none;
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
 
-    .back-link:hover {
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex: 1;
+    }
+
+    .nav-left a {
+      text-decoration: none;
+      color: #111;
+      margin-left: 2rem;
+    }
+
+    .workplay-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      gap: 2rem;
+    }
+
+    .workplay-nav a {
+      text-decoration: none;
+      color: #111;
+      font-size: 1.2rem;
+      margin-right: 2rem;
+    }
+
+    .workplay-nav span {
+      font-size: 1.2rem;
       color: #111;
     }
 
+    .nav-right {
+      font-size: 2.5rem;
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .logo {
+      width: 160px;
+      height: auto;
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-top: 0;
+      padding: 4rem 0;
+    }
+
+    /* Project Header */
+    .project-header {
+      margin-bottom: 6rem;
+    }
+
     .project-title {
-      font-size: 3rem;
+      font-size: 4rem;
       font-weight: 700;
-      margin-bottom: 1.5rem;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      color: #1a1a1a;
     }
 
     .project-subtitle {
       font-size: 1.5rem;
       color: #666;
       margin-bottom: 2rem;
+      max-width: 600px;
+      line-height: 1.4;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      color: #999;
+    }
+
+    .meta-value {
+      color: #1a1a1a;
+      font-weight: 500;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      margin-bottom: 6rem;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      position: relative;
     }
 
     .hero-image {
-      width: 100%;
-      height: 500px;
+      width: 100vw;
+      height: 100vh;
       object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 3rem;
+      margin: 0;
+      display: block;
     }
 
-    .project-link {
-      display: inline-block;
-      font-size: 1.1rem;
-      color: #0066FF;
-      text-decoration: none;
-      margin-bottom: 2rem;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid #0066FF;
+    .hero-caption {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-style: italic;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
 
-    .project-link:hover {
-      opacity: 0.8;
+    .hero-video {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
     }
 
-    .section {
-      margin-bottom: 3rem;
+    /* Content Sections */
+    .content-section {
+      margin-bottom: 6rem;
     }
 
     .section-title {
-      font-size: 1.8rem;
+      font-size: 2.5rem;
       font-weight: 600;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      color: #1a1a1a;
     }
 
     .section-content {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #333;
+      line-height: 1.7;
+    }
+
+    .section-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-content strong {
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    .section-content h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 2rem 0 1rem 0;
+    }
+
+    .section-content ul {
+      margin: 1rem 0 1.5rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .section-content li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .section-image {
+      display: block;
+      margin: 2rem auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-video {
+      display: block;
+      margin: 2rem auto;
+      left: 50%;
+      max-width: 600px;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Image Grid */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .image-grid img {
+      width: 100%;
+      border-radius: 12px;
+      transition: transform 0.2s ease;
+    }
+
+    .image-grid img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Video Section */
+    .video-section {
+      margin: 4rem 0;
     }
 
     .video-container {
@@ -91,8 +266,8 @@
       padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
+      border-radius: 16px;
       margin: 2rem 0;
-      border-radius: 12px;
     }
 
     .video-container iframe {
@@ -103,106 +278,205 @@
       height: 100%;
     }
 
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+    /* Project Links */
+    .project-links {
+      display: flex;
       gap: 2rem;
+      margin: 3rem 0;
+      flex-wrap: wrap;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: #1a1a1a;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .project-link:hover {
+      background: #333;
+      transform: translateY(-2px);
+    }
+
+    /* Technical Details */
+    .tech-details {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 12px;
       margin: 2rem 0;
     }
 
-    .image-grid img {
-      width: 100%;
-      border-radius: 8px;
+    .tech-details h3 {
+      color: #1a1a1a;
+      font-size: 1.2rem;
+      margin: 1.5rem 0 0.5rem 0;
+      font-weight: 600;
     }
 
-    .tech-details h3 {
-      color: #333;
-      font-size: 1.6rem;
-      margin: 2rem 0 1rem 0;
-      font-weight: 600;
+    .tech-details h3:first-child {
+      margin-top: 0;
     }
 
     .tech-details p {
       color: #666;
-      font-size: 1.3rem;
-      margin: 0 0 2rem 0;
-      padding-left: 1.5rem;
-      border-left: 3px solid #eee;
-      line-height: 1.6;
+      margin: 0 0 1rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid #e5e5e5;
+      font-size: 0.95rem;
     }
 
-    .tech-details {
-      margin-top: 2rem;
-      padding: 2rem;
-      background: #fafafa;
-      border-radius: 12px;
-    }
-
+    /* Responsive Design */
     @media (max-width: 768px) {
       .container {
-        padding: 1rem;
+        padding: 0 1rem;
       }
       
       .project-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
+      }
+      
+      .project-subtitle {
+        font-size: 1.2rem;
       }
       
       .image-grid {
         grid-template-columns: 1fr;
       }
+      
+      .project-meta {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      
+      .hero-image {
+        height: 400px;
+      }
+      
+      .nav {
+        padding: 0 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .project-title {
+        font-size: 2rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .project-links {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <div class="nav-left">
+        <img src="assets/images/pearj.svg" alt="Pear J logo" class="logo" />
+        <a href="about.html">About</a>
+        <a href="assets/images/panyanus_resume.pdf">Resume</a>
+      </div>
+      <div class="workplay-nav">
+        <a href="work.html">Work</a>
+        <span>//</span>
+        <a href="play.html">Play</a>
+      </div>
+      <div class="nav-right">👀</div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
   <div class="container">
-    <div class="header">
-      <a href="index.html" class="back-link">← Back to Projects</a>
+      <!-- Project Header -->
+      <div class="project-header">
       <h1 class="project-title">Flipframe</h1>
       <p class="project-subtitle">A kinetic object that simulates the rhythm of a day—mapping memory, motion, and light through mechanical transformation.</p>
+        
+        <div class="project-meta">
+          <div class="meta-item">
+            <span class="meta-label">Role</span>
+            <span class="meta-value">Designer, Developer, Fabricator</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Timeline</span>
+            <span class="meta-value">1 month</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Year</span>
+            <span class="meta-value">2024</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Project</span>
+            <span class="meta-value">GSAPP- Making Senses Course</span>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Hero Section - Full Width -->
+    <div class="hero-section">
+      <img src="assets/images/flipframe.jpg" alt="Flipframe Project" class="hero-image">
+    </div>
+    <div class="hero-section">
     <img src="assets/images/flipframe3.jpg" alt="Flipframe Project" class="hero-image">
-    <img src="assets/images/flipframe2.jpg" alt="Flipframe Project" class="hero-image">
-    <img src="assets/images/flipframe4.jpg" alt="Flipframe Project" class="hero-image">
+    </div>
 
-
-    <div class="section">
-      <h2 class="section-title">Overview</h2>
+    <div class="container">
+      <!-- Overview Section -->
+      <div class="content-section">
       <div class="section-content">
-        <p>
-          <b>Flipframe</b> is a kinetic sculpture that explores memory and time through physical motion. Built as part of the Making Senses course, the project draws inspiration from analog display boards and flower-like mechanisms, translating daily rhythms—like a sunrise or a user's movement—into sculptural flipping actions.
+          <p><strong>Flipframe</strong> is a kinetic sculpture that explores memory and time through physical motion. Built as part of the Making Senses course, the project draws inspiration from analog display boards and flower-like mechanisms, translating daily rhythms—like a sunrise or a user's movement—into sculptural flipping actions.</p>
 
-          The object functions like a living painting: mounted on a freestanding frame, its tiles flip at programmed intervals, revealing different surfaces and creating a constantly shifting visual narrative. Designed to move slowly and deliberately, Flipframe challenges the pace of digital time by grounding transitions in tactile motion.
+          <p>The object functions like a living painting: mounted on a freestanding frame, its tiles flip at programmed intervals, revealing different surfaces and creating a constantly shifting visual narrative. Designed to move slowly and deliberately, Flipframe challenges the pace of digital time by grounding transitions in tactile motion.</p>
           
-          The project reconsiders what a display can be—not something to read, but something to feel. It maps abstract information like time, presence, and routine into mechanical gestures that evoke atmosphere more than data.
+          <p>The project reconsiders what a display can be—not something to read, but something to feel. It maps abstract information like time, presence, and routine into mechanical gestures that evoke atmosphere more than data.</p>
           
-          Beyond its function, Flipframe becomes a meditation on sensory design: how sound, color, and movement can create meaning without words.
+          <p>Beyond its function, Flipframe becomes a meditation on sensory design: how sound, color, and movement can create meaning without words.</p>
           
-          It's not interactive in a conventional sense—but deeply responsive, inviting the viewer to pause and reflect with it.  </p>
+          <p>It's not interactive in a conventional sense—but deeply responsive, inviting the viewer to pause and reflect with it.</p>
+        </div>
       </div>
+
+      <!-- Process Section -->
+              <div class="content-section">
+          <div class="section-content">
+            <div class="image-grid">
+              <img src="assets/images/flipframe2.jpg" alt="Flipframe Process">
+              <img src="assets/images/flipframe4.jpg" alt="Flipframe Process">
+            </div>
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/JBlZhPixxCI?si=4awF339u15i5hR1q" frameborder="0" allowfullscreen></iframe>
     </div>
 
-    <div class="section">
-      <h2 class="section-title">Process</h2>
-      <div class="section-content">
-        <p>
-            Flipframe evolved from a series of studies in slow movement, mechanical response, and analog feedback. Inspired by 7-segment rack displays and kinetic petals, I prototyped multiple versions using laser-cut gears, 3D-printed arms, and servo motors.
-
-            The motion logic was structured around a compressed day cycle (e.g. a 24-hour sunpath simulated in 60 seconds). The tile flipping rhythm mirrors sunrise to sunset across a 10-step cycle.
-            
-            Material choice—translucent acrylics, PLA, and sound-dampened racks—was key to controlling not just motion but acoustic presence.</p>
+          <p>Flipframe evolved from a series of studies in slow movement, mechanical response, and analog feedback. Inspired by 7-segment rack displays and kinetic petals, I prototyped multiple versions using laser-cut gears, 3D-printed arms, and servo motors.</p>
+          
+          <p>The motion logic was structured around a compressed day cycle (e.g. a 24-hour sunpath simulated in 60 seconds). The tile flipping rhythm mirrors sunrise to sunset across a 10-step cycle.</p>
+          
+          <p>Material choice—translucent acrylics, PLA, and sound-dampened racks—was key to controlling not just motion but acoustic presence.</p>
+          
+          <img src="assets/images/patentdrawing.jpg" alt="Patent Drawing" class="section-image">
+        </div>
       </div>
+
+      </div>
+
     </div>
 
-    <img src="assets/images/patentdrawing.jpg" alt="Flipframe Project">
-
-    <div class="section">
-      <h2 class="section-title">Demo Video</h2>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/JBlZhPixxCI?si=4awF339u15i5hR1q" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-
-    <div class="section">
+    <div class="container">
+      <!-- Technical Details Section -->
+      <div class="content-section">
       <h2 class="section-title">Technical Details</h2>
       <div class="section-content">
         <p>The system utilizes:</p>
@@ -219,9 +493,28 @@
 
           <h3>Modular Tile Layout</h3>
           <p>Each tile is laser-cut or 3D-printed and color-coded. Combinations reveal different visual states depending on rotation and sequence.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thank You Section -->
+      <div class="content-section">
+        <div class="tech-details" style="text-align: center; background: #ffffff; border: 2px solid #ffffff;">
+          <h3 style="color: #000000; margin-bottom: 1rem;">🙏 Thank You & Inspiration</h3>
+          <p style="color: #000000; font-size: 1.1rem; margin-bottom: 1rem;">
+            This project was inspired by the innovative mechanical design of 
+            <a href="https://engineezy.com/products/the-rack-driven-7-segment-display?variant=44578554773659" target="_blank" style="color: #000000; text-decoration: underline; font-weight: 600;">
+              The Rack Driven 7 Segment Display
+            </a> 
+            by Engineezy.
+          </p>
+          <p style="color: #000000; font-size: 1rem; margin: 0;">
+            Their rack-and-pinion system design provided the foundation for the mechanical motion in Flipframe.
+          </div>
         </div>
       </div>
     </div>
   </div>
+  </main>
 </body>
 </html>

@@ -3,87 +3,262 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Digital Tapestry | CDP Portfolio</title>
+  <title>Digital Tapestry | Pear J.</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+    
     body {
       font-family: "Karla", sans-serif;
       margin: 0;
       padding: 2rem;
       background-color: #fff;
       color: #111;
-      line-height: 1.6;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem;
+      padding: 0 2rem;
     }
 
+    /* Header Navigation */
     .header {
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
     }
 
-    .back-link {
-      display: inline-flex;
+    .nav {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      color: #666;
-      text-decoration: none;
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
 
-    .back-link:hover {
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex: 1;
+    }
+
+    .nav-left a {
+      text-decoration: none;
+      color: #111;
+      margin-left: 2rem;
+    }
+
+    .workplay-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      gap: 2rem;
+    }
+
+    .workplay-nav a {
+      text-decoration: none;
+      color: #111;
+      font-size: 1.2rem;
+      margin-right: 2rem;
+    }
+
+    .workplay-nav span {
+      font-size: 1.2rem;
       color: #111;
     }
 
+    .nav-right {
+      font-size: 2.5rem;
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .logo {
+      width: 160px;
+      height: auto;
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-top: 0;
+      padding: 4rem 0;
+    }
+
+    /* Project Header */
+    .project-header {
+      margin-bottom: 6rem;
+    }
+
     .project-title {
-      font-size: 3rem;
+      font-size: 4rem;
       font-weight: 700;
-      margin-bottom: 1.5rem;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      color: #1a1a1a;
     }
 
     .project-subtitle {
       font-size: 1.5rem;
       color: #666;
       margin-bottom: 2rem;
+      max-width: 600px;
+      line-height: 1.4;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      color: #999;
+    }
+
+    .meta-value {
+      color: #1a1a1a;
+      font-weight: 500;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      margin-bottom: 6rem;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      position: relative;
     }
 
     .hero-image {
-      width: 100%;
-      height: 500px;
+      width: 100vw;
+      height: 100vh;
       object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 3rem;
+      margin: 0;
+      display: block;
     }
 
-    .project-link {
-      display: inline-block;
-      font-size: 1.1rem;
-      color: #0066FF;
-      text-decoration: none;
-      margin-bottom: 2rem;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid #0066FF;
+    .hero-caption {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-style: italic;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
 
-    .project-link:hover {
-      opacity: 0.8;
+    .hero-video {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
     }
 
-    .section {
-      margin-bottom: 3rem;
+    /* Content Sections */
+    .content-section {
+      margin-bottom: 6rem;
     }
 
     .section-title {
-      font-size: 1.8rem;
+      font-size: 2.5rem;
       font-weight: 600;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      color: #1a1a1a;
     }
 
     .section-content {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #333;
+      line-height: 1.7;
+    }
+
+    .section-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-content strong {
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    .section-content h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 2rem 0 1rem 0;
+    }
+
+    .section-content ul {
+      margin: 1rem 0 1.5rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .section-content li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .section-image {
+      display: block;
+      margin: 2rem auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-video {
+      display: block;
+      margin: 2rem auto;
+      left: 50%;
+      max-width: 600px;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Image Grid */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .image-grid img {
+      width: 100%;
+      border-radius: 12px;
+      transition: transform 0.2s ease;
+    }
+
+    .image-grid img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Video Section */
+    .video-section {
+      margin: 4rem 0;
     }
 
     .video-container {
@@ -91,8 +266,8 @@
       padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
+      border-radius: 16px;
       margin: 2rem 0;
-      border-radius: 12px;
     }
 
     .video-container iframe {
@@ -103,121 +278,223 @@
       height: 100%;
     }
 
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+    /* Project Links */
+    .project-links {
+      display: flex;
       gap: 2rem;
+      margin: 3rem 0;
+      flex-wrap: wrap;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: #1a1a1a;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .project-link:hover {
+      background: #333;
+      transform: translateY(-2px);
+    }
+
+    /* Technical Details */
+    .tech-details {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 12px;
       margin: 2rem 0;
     }
 
-    .image-grid img {
-      width: 100%;
-      border-radius: 8px;
+    .tech-details h3 {
+      color: #1a1a1a;
+      font-size: 1.2rem;
+      margin: 1.5rem 0 0.5rem 0;
+      font-weight: 600;
     }
 
-    .tech-details h3 {
-      color: #333;
-      font-size: 1.3rem;
-      margin: 1.5rem 0 0.5rem 0;
+    .tech-details h3:first-child {
+      margin-top: 0;
     }
 
     .tech-details p {
       color: #666;
       margin: 0 0 1rem 0;
       padding-left: 1rem;
-      border-left: 2px solid #eee;
+      border-left: 3px solid #e5e5e5;
+      font-size: 0.95rem;
     }
 
+    /* Responsive Design */
     @media (max-width: 768px) {
       .container {
-        padding: 1rem;
+        padding: 0 1rem;
       }
       
       .project-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
+      }
+      
+      .project-subtitle {
+        font-size: 1.2rem;
       }
       
       .image-grid {
         grid-template-columns: 1fr;
       }
+      
+      .project-meta {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      
+      .hero-image {
+        height: 400px;
+      }
+      
+      .nav {
+        padding: 0 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .project-title {
+        font-size: 2rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .project-links {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <a href="index.html" class="back-link">← Back to Projects</a>
-      <h1 class="project-title">The Digital Tapestry</h1>
-      <p class="project-subtitle">Mapping the invisible infrastructures that sustain craft traditions in Bangkok's urban fabric.
-    </div>
-
-    <img src="assets/images/digitapes.jpg" alt="Digital Tapestry Project" class="hero-image">
-    <div class="project-links">
-      <a href="https://growapear.github.io/digital_tapestry/" target="_blank" class="project-link">Visit Project Website →</a>
-    </div>
-
-    <div class="section">
-      <h2 class="section-title">Overview</h2>
-      <div class="section-content">
-        <p>
-          <b>The Digital Tapestry</b> is an interactive web project that visualizes the often-invisible ecosystems of traditional craft communities in Bangkok. It maps how knowledge, materials, and relationships flow across space—revealing an informal yet resilient network of artisans, workshops, and shared rituals that persist despite increasing urban formalization.
-
-          The project emerged from a desire to understand how craft survives when it is unrecognized by formal planning systems. Using site visits, interviews, archival imagery, and spatial analysis, I created a digital interface that allows users to explore hidden communities through interactive maps, sound recordings, and narrative fragments.
-          
-          Rather than documenting individual makers, The Digital Tapestry focuses on the broader systems that enable knowledge transfer: family ties, spatial proximity, trusted word-of-mouth.
-          
-          It's not just a research archive—it's a way of re-seeing the city. The work invites us to zoom into overlooked spaces, listen for ambient histories, and reflect on the fragility and ingenuity of informal systems.
-          
-          Ultimately, The Digital Tapestry is a foundation: the first step in a longer inquiry into craft as memory, space as archive, and the potential of digital tools to make the hidden visible.
-        </p>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <div class="nav-left">
+        <img src="assets/images/pearj.svg" alt="Pear J logo" class="logo" />
+        <a href="about.html">About</a>
+        <a href="assets/images/panyanus_resume.pdf">Resume</a>
       </div>
-    </div>
-
-    <div class="section">
-      <h2 class="section-title">Process</h2>
-      <div class="section-content">
-        <p>
-            The project began with mapping exercises based on real urban fabric in Bangkok. I conducted fieldwork and secondary research on craft clusters—especially in neighborhoods where knowledge circulates informally, often between houses or across generations.
-
-            I used Google Maps API and archival image sourcing to construct a narrative web of spaces. These were translated into an interactive digital map layered with sound, text, and visual cues.
-            
-            The goal was to move beyond the "maker profile" and focus instead on the atmospheric, spatial, and social conditions that allow craft to survive quietly in the background of the city.
-            
-             </p>
-        <div class="image-grid">
-          <img src="assets/images/digiprocess.jpg" alt="Process Image 1">
-          <img src="assets/images/digiprocess2.png" alt="Process Image 2">
-        </div>
+      <div class="workplay-nav">
+        <a href="work.html">Work</a>
+        <span>//</span>
+        <a href="play.html">Play</a>
       </div>
-    </div>
+      <div class="nav-right">👀</div>
+    </nav>
+  </header>
 
-    <div class="section">
-      <h2 class="section-title">Demo Video</h2>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/b3zo9rAUl00?si=oYkDjVdhCu6oS5I3" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2 class="section-title">Technical Details</h2>
-      <div class="section-content">
-        <p>The system utilizes:</p>
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <!-- Project Header -->
+      <div class="project-header">
+        <h1 class="project-title">Digital Tapestry</h1>
+        <p class="project-subtitle">Mapping the invisible infrastructures that sustain craft traditions in Bangkok's urban fabric.</p>
         
-        <div class="tech-details">
-          <h3>Spatial Data Mapping</h3>
-          <p>Manually traced neighborhood geographies and informal craft routes layered onto a digital map</p>
-
-          <h3>Ambient Sound Integration</h3>
-          <p>Embedded environmental recordings collected in alleyways, workshops, and street corners</p>
-
-          <h3>Web-based Interactive Interface</h3>
-          <p>Built with Figma and translated into an exploratory website (Figma prototype / HTML available)</p>
-
-          <h3>Narrative Linking & Metadata Tagging</h3>
-          <p>Each node (person, space, material) is tagged with cultural context and linked to larger systems of support</p>
+        <div class="project-meta">
+          <div class="meta-item">
+            <span class="meta-label">Role</span>
+            <span class="meta-value">UI/UX Designer, Developer, Researcher, Storyteller</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Timeline</span>
+            <span class="meta-value">1 month</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Year</span>
+            <span class="meta-value">2024</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Project</span>
+            <span class="meta-value">GSAPP-CDP</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+
+    <!-- Hero Section - Full Width -->
+    <div class="hero-section">
+      <img src="assets/images/digital-tapestry.jpg" alt="Digital Tapestry Project" class="hero-image">
+    </div>
+
+    <div class="container">
+      <!-- Project Links -->
+      <div class="project-links">
+        <a href="https://growapear.github.io/digital_tapestry/" target="_blank" class="project-link">
+          Visit Project Website →
+        </a>
+      </div>
+
+      <!-- Overview Section -->
+      <div class="content-section">
+        <div class="section-content">
+          <p><strong>The Digital Tapestry</strong> is an interactive web project that visualizes the often-invisible ecosystems of traditional craft communities in Bangkok. It maps how knowledge, materials, and relationships flow across space—revealing an informal yet resilient network of artisans, workshops, and shared rituals that persist despite increasing urban formalization.</p>
+          
+          <p>The project emerged from a desire to understand how craft survives when it is unrecognized by formal planning systems. Using site visits, interviews, archival imagery, and spatial analysis, I created a digital interface that allows users to explore hidden communities through interactive maps, sound recordings, and narrative fragments.</p>
+          
+          <p>Rather than documenting individual makers, The Digital Tapestry focuses on the broader systems that enable knowledge transfer: family ties, spatial proximity, trusted word-of-mouth.</p>
+          
+          <p>It's not just a research archive—it's a way of re-seeing the city. The work invites us to zoom into overlooked spaces, listen for ambient histories, and reflect on the fragility and ingenuity of informal systems.</p>
+          
+          <p>Ultimately, The Digital Tapestry is a foundation: the first step in a longer inquiry into craft as memory, space as archive, and the potential of digital tools to make the hidden visible.</p>
+        </div>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/b3zo9rAUl00?si=cy9Gx1ZNyBZIpwGW" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- Process Section -->
+      <div class="content-section">
+        <div class="section-content">
+
+          <p>The project began with mapping exercises based on real urban fabric in Bangkok. I conducted fieldwork and secondary research on craft clusters—especially in neighborhoods where knowledge circulates informally, often between houses or across generations.</p>
+          
+          <p>I used Google Maps API and archival image sourcing to construct a narrative web of spaces. These were translated into an interactive digital map layered with sound, text, and visual cues.</p>
+          
+          <p>The goal was to move beyond the "maker profile" and focus instead on the atmospheric, spatial, and social conditions that allow craft to survive quietly in the background of the city.</p>
+          
+          <div class="image-grid">
+            <img src="assets/images/digiprocess.jpg" alt="Process Image 1">
+            <img src="assets/images/digiprocess2.png" alt="Process Image 2">
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical Details Section -->
+      <div class="content-section">
+        <h2 class="section-title">Technical Details</h2>
+        <div class="section-content">
+          <p>The system utilizes:</p>
+          
+          <div class="tech-details">
+            <h3>Spatial Data Mapping</h3>
+            <p>Manually traced neighborhood geographies and informal craft routes layered onto a digital map</p>
+
+            <h3>Ambient Sound Integration</h3>
+            <p>Embedded environmental recordings collected in alleyways, workshops, and street corners</p>
+
+            <h3>Web-based Interactive Interface</h3>
+            <p>Built with Figma and translated into an exploratory website (Figma prototype / HTML available)</p>
+
+            <h3>Narrative Linking & Metadata Tagging</h3>
+            <p>Each node (person, space, material) is tagged with cultural context and linked to larger systems of support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
 </html>

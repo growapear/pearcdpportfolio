@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pear J. | About</title>
+  <style>
+    body {
+      font-family: "Karla", sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #fff;
+      color: #111;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+      padding-top: 4rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 6rem;
+    }
+
+    .nav-right {
+      font-size: 1.5rem;
+    }
+
+    .logo {
+      width: 160px;
+      height: auto;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111;
+      margin-left: 2rem;
+    }
+
+    nav a:hover, .workplay-nav a:hover {
+      text-decoration: underline !important;
+    }
+
+    .main-content {
+      max-width: 70%;
+      margin-left: 0;
+      padding-top: 2rem;
+    }
+
+    .greeting {
+      font-size: 4rem;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    .intro {
+      font-size: 1.4rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .resume-link:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 3rem;
+      color: #888;
+      font-size: 1rem;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      color: #888;
+      transition: color 0.2s ease;
+    }
+
+    .social-links a:hover {
+      color: #111;
+    }
+
+    .decorative-dot {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 8px;
+      height: 8px;
+      background: #111;
+      border-radius: 50%;
+    }
+
+    .marquee-section {
+      margin: 4rem 0;
+      overflow: hidden;
+    }
+
+    .marquee-container {
+      display: flex;
+      gap: 2rem;
+      animation: scroll 30s linear infinite;
+    }
+
+    .marquee-image {
+      width: 300px;
+      height: 400px;
+      background: #f0f0f0;
+      border-radius: 8px;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .marquee-container:hover {
+      animation-play-state: paused;
+    }
+
+    .video-section {
+      margin: 4rem 0;
+    }
+
+    .video-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background: #f8f8f8;
+    }
+
+    .video-placeholder {
+      width: 100%;
+      height: 450px;
+      background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    .video-controls {
+      background: #333;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    .play-button {
+      width: 0;
+      height: 0;
+      border-left: 8px solid white;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      cursor: pointer;
+    }
+
+    .progress-bar {
+      flex: 1;
+      height: 4px;
+      background: #555;
+      border-radius: 2px;
+      position: relative;
+    }
+
+    .progress-fill {
+      width: 30%;
+      height: 100%;
+      background: white;
+      border-radius: 2px;
+    }
+
+    .video-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .fun-facts-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      margin: 3rem 0 2rem 0;
+    }
+
+    .fun-facts-photo {
+      width: 340px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      background: #f8f8f8;
+    }
+
+    .fun-facts-list {
+      text-align: left;
+      color: #222;
+      font-size: 1.25rem;
+      line-height: 1.7;
+      max-width: 500px;
+    }
+
+    .fun-facts-list p {
+      margin: 1.2rem 0;
+    }
+
+    .fun-facts-list .highlight {
+      color: #6c63ff; /* purple or your accent color */
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1.5px solid #e0e0e0;
+      margin: 3rem 0 2.5rem 0;
+      width: 100%;
+    }
+
+
+    @media (max-width: 768px) {
+      .main-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="nav-left">
+        <a href="index.html">Home</a>
+       
+      </div>
+      <div class="workplay-nav" style="margin-left:auto; margin-right:2rem; display:inline-block;">
+        <a href="work.html" style="text-decoration:none; color:#111; font-size:1.2rem; margin-right:2rem;">Work</a>
+        <span style="font-size:1.2rem; color:#111;">//</span>
+        <a href="play.html" style="text-decoration:none; color:#111; font-size:1.2rem; margin-left:2rem;">Play</a>
+      </div>
+      <div class="nav-right">👀</div>
+    </nav>
+
+    <div class="main-content">
+      <h1 class="greeting"> 👋🏻 Hello</h1>
+      <p class="intro">I am <b>Panyanus Jansomwong</b></p>
+      <p class="intro">or you can call me <b>Pearwa or Pear</b></p>
+      <p class="intro">Originally from Bangkok, recently based in New York City, and currently working from Thailand — I design across places, platforms, and practices.</p>
+      <p class="intro">I build things that move—mechanically, digitally, or socially. From kinetic displays and gesture-based interfaces to speculative archives and web-based visualizations, my work explores how code, craft, and collective memory intersect.</p>
+      <p class="intro">I'm interested in how people interact with space, information, and each other — especially in contexts that blend the physical and digital.</p>
+      <p class="intro">I hold an MFA in Design Engineering, a joint degree between Rhode Island School of Design and Brown University, and an MS in Computational Design Practices from Columbia GSAPP.</p>
+      <p class="intro">My background spans architecture, interior design, and computational systems — from crafting spatial experiences and kinetic installations to developing interactive tools and digital platforms. I design across scales and mediums, always with an interest in how people move, make, and connect.</p>
+    </div>
+
+
+
+    <p class="intro" style="margin-top: 2rem;"><i>Open to full time opportunities.</i></p>
+    <a href="assets/images/panyanus_resume.pdf" target="_blank" class="resume-link" style="text-decoration: underline; color: #111; font-size: 1.5rem; margin-top: 2rem;">Full Resume</a>
+
+    <hr class="section-divider">
+
+
+
+    <div class="marquee-section">
+      <div class="marquee-container">
+        <img src="assets/images/image1.jpg" alt="Image 1" class="marquee-image">
+        <img src="assets/images/image2.jpg" alt="Image 2" class="marquee-image">
+        <img src="assets/images/image3.jpg" alt="Image 3" class="marquee-image">
+        <img src="assets/images/image4.jpg" alt="Image 4" class="marquee-image">
+        <img src="assets/images/image5.jpg" alt="Image 5" class="marquee-image">
+        <img src="assets/images/image6.jpg" alt="Image 6" class="marquee-image"> -->
+        <!-- Duplicate for seamless loop -->
+        <img src="assets/images/image1.jpg" alt="Image 1" class="marquee-image">
+        <img src="assets/images/image2.jpg" alt="Image 2" class="marquee-image">
+        <img src="assets/images/image3.jpg" alt="Image 3" class="marquee-image">
+        <img src="assets/images/image4.jpg" alt="Image 4" class="marquee-image">
+        <img src="assets/images/image5.jpg" alt="Image 5" class="marquee-image">
+        <img src="assets/images/image6.jpg" alt="Image 6" class="marquee-image"> -->
+      </div>
+    </div>
+
+    
+    
+    <div class="footer">
+      <div class="social-links">
+        <a href="https://www.instagram.com/pearwaaaaaaa/">Instagram</a>
+        <a href="https://www.linkedin.com/in/panyanus-jansomwong/">Linkedin</a>
+        <a href="mailto:panyanus@gmail.com">Mail</a>
+      </div>
+    </div>
+
+    <div class="decorative-dot"></div>
+  </div>
+</body>
+</html> 

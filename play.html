@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pear's Play</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: "Karla", sans-serif;
+      background: #ffffff;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: white;
+      border-bottom: 1px solid #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex: 1;
+    }
+
+    .workplay-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      gap: 2rem;
+    }
+
+    .nav-right {
+      font-size: 1.5rem;
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .nav-right:hover .opportunity-popup {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .opportunity-popup {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: white;
+      color: #111;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      margin-top: 8px;
+      z-index: 1000;
+    }
+
+    .opportunity-popup::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      right: 20px;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid white;
+    }
+
+    .logo {
+      width: 160px;
+      height: auto;
+    }
+
+    .profile-emoji-inline {
+      height: 5rem;
+      width: auto;
+      margin: 0 0 -0.3rem 0;
+      vertical-align: baseline;
+    }
+
+    header a {
+      text-decoration: none;
+      color: #111;
+      margin-left: 2rem;
+    }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 10px;
+      padding: 0;
+      max-width: 100%;
+      margin: 0;
+      background: #f5f5f5;
+      height: 100vh;
+    }
+
+    .item {
+      background: #e8e8e8;
+      border-radius: 18px;
+      overflow: hidden;
+      border: none;
+      transition: all 0.3s ease;
+      position: relative;
+      box-shadow: none;
+      min-height: 600px;
+      cursor: pointer;
+    }
+
+    .item:hover {
+      transform: scale(1.02);
+    }
+
+    .item:hover .hover-overlay {
+      opacity: 1;
+    }
+
+    .hover-overlay {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .hover-project-name {
+      background: white;
+      color: #111;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-align: left;
+      padding: 10px 14px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin: 0;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .hover-project-category {
+      background: white;
+      color: #666;
+      font-size: 0.85rem;
+      text-align: left;
+      padding: 10px 14px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    .thumb {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      background-color: #e8e8e8;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media screen and (max-width: 600px) {
+      .grid {
+        padding: 20px;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav-left">
+    <img src="assets/images/pearj.svg" alt="Pear J logo" class="logo" />
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="workplay-nav">
+    <a href="work.html">Work</a>
+    <span style="font-size:1.2rem; color:#111;">//</span>
+    <a href="play.html" style="text-decoration:none; color:#111; font-size:1.2rem;"><b>Play</b></a>
+  </div>
+  <div class="nav-right">
+    👀
+    <div class="opportunity-popup">I'm open to full-time opportunities</div>
+  </div>
+</header>
+
+<!-- PLAY SECTION -->
+<section id="playSection" class="grid">
+  <div class="item" onclick="window.location.href='dogsofnyc.html'">
+    <video class="thumb" src="assets/images/dogsofnyc.mp4" autoplay loop muted playsinline></video>
+    <div class="hover-overlay">
+      <div class="hover-project-name">Dogs of NYC</div>
+      <div class="hover-project-category">Dataviz</div>
+      <div class="hover-project-category">Data Storytelling</div>
+    </div>
+  </div>
+  <div class="item" onclick="window.location.href='whisperingcolors.html'">
+    <img class="thumb" src="assets/images/whisperingcolors.gif" alt="Whispering Colors">
+    <div class="hover-overlay">
+      <div class="hover-project-name">Whispering Colors</div>
+      <div class="hover-project-category">Interactive Art</div>
+      <div class="hover-project-category">Gesture Tracking</div>
+    </div>
+  </div>
+  <div class="item" onclick="window.location.href='codeart.html'">
+    <img class="thumb" src="assets/images/codearts.gif" alt="Code Art">
+    <div class="hover-overlay">
+      <div class="hover-project-name">Code Art</div>
+      <div class="hover-project-category">Interactive Art</div>
+      <div class="hover-project-category">Generative Design</div>
+    </div>
+  </div>
+  <div class="item" onclick="window.location.href='hidden-gems.html'">
+    <img class="thumb" src="assets/images/hiddengems.jpg" alt="Hidden Gems">
+    <div class="hover-overlay">
+      <div class="hover-project-name">Hidden Gems</div>
+      <div class="hover-project-category">Application / AR</div>
+      <div class="hover-project-category">Mobile Development</div>
+    </div>
+  </div>
+  <div class="item" onclick="window.location.href='wonderfruit.html'">
+    <img class="thumb" src="assets/images/wonderfruit.jpg" alt="Wonderfruit Competition">
+    <div class="hover-overlay">
+      <div class="hover-project-name">Wonderfruit Competition</div>
+      <div class="hover-project-category">Sustainability</div>
+      <div class="hover-project-category">Architectural Design</div>
+    </div>
+  </div>
+  <div class="item" onclick="window.location.href='modelmakingarchives.html'">
+    <img class="thumb" src="assets/images/modelarchives.png" alt="Model Making Archives">
+    <div class="hover-overlay">
+      <div class="hover-project-name">Model Making Archives</div>
+      <div class="hover-project-category">Handcut, Laser Cut</div>
+      <div class="hover-project-category">3D Printing</div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html> 

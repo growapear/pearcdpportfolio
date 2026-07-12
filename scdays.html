@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SC DAYS Exhibition | Pear J.</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Karla", sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #fff;
+      color: #111;
+    }
+
+    /* Header Navigation */
+    .header {
+      margin-bottom: 4rem;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex: 1;
+    }
+
+    .nav-left a {
+      text-decoration: none;
+      color: #111;
+      margin-left: 2rem;
+    }
+
+    .nav-left a:hover {
+      text-decoration: underline;
+    }
+
+    .workplay-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      gap: 2rem;
+    }
+
+    .workplay-nav a {
+      text-decoration: none;
+      color: #111;
+      font-size: 1.2rem;
+    }
+
+    .workplay-nav a:hover {
+      text-decoration: underline;
+    }
+
+    .workplay-nav span {
+      font-size: 1.2rem;
+      color: #111;
+    }
+
+    .nav-right {
+      font-size: 2.5rem;
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .logo {
+      width: 160px;
+      height: auto;
+    }
+
+    /* Case Study */
+    .case-study {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 0 1.5rem 6rem;
+    }
+
+    .case-study-header {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #d8d8d8;
+      margin: 3.5rem 0;
+    }
+
+    .category-tag {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
+      color: #111;
+      margin: 0 0 2.5rem;
+    }
+
+    .case-title {
+      font-size: clamp(2.25rem, 5vw, 3.25rem);
+      font-weight: 700;
+      line-height: 1.12;
+      margin: 0 0 2rem;
+      color: #111;
+    }
+
+    .case-intro {
+      font-size: 1.1rem;
+      line-height: 1.65;
+      color: #333;
+      margin: 0 auto 2rem;
+      max-width: 600px;
+    }
+
+    .case-intro em {
+      font-style: italic;
+    }
+
+    /* Hero */
+    .hero-section {
+      width: 100vw;
+      height: 95vh;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 95vh;
+      min-height: 660px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Meta row */
+    .meta-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      text-align: left;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .meta-block .meta-label {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #111;
+      margin-bottom: 0.75rem;
+    }
+
+    .meta-block .meta-value {
+      font-size: 0.92rem;
+      color: #333;
+      line-height: 1.55;
+    }
+
+    /* Section labels */
+    .section-label {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
+      color: #111;
+      margin: 0 0 1.5rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 1.25rem;
+      color: #111;
+    }
+
+    .section-body,
+    .feature-text {
+      font-size: 1.02rem;
+      line-height: 1.75;
+      color: #333;
+      text-align: left;
+    }
+
+    .section-body p,
+    .feature-text p {
+      margin: 0 0 1.15rem;
+    }
+
+    .section-body p:last-child,
+    .feature-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Two-column: images left, text right */
+    .section-split {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 8rem;
+      align-items: start;
+    }
+
+    .section-images {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      width: 100%;
+    }
+
+    .section-image-featured {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .img-placeholder--featured {
+      width: min(100%, 820px);
+      aspect-ratio: 16 / 9;
+      min-height: 360px;
+      background: #f5f5f5;
+    }
+
+    .img-placeholder--featured img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .section-images--full {
+      display: block;
+      width: 100%;
+    }
+
+    .section-images--full .img-placeholder {
+      aspect-ratio: unset;
+      min-height: unset;
+      height: auto;
+      width: 100%;
+      background: transparent;
+    }
+
+    .section-images--full .img-placeholder img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .section-images--full.section-images--stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .section-images--row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      width: 100%;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-images--row .img-placeholder {
+      aspect-ratio: 4 / 3;
+      min-height: 0;
+      width: 100%;
+    }
+
+    .section-text--below {
+      max-width: 100%;
+      padding-top: 0;
+    }
+
+    .section-text--below .section-heading {
+      margin-bottom: 1.25rem;
+    }
+
+    .section-images--facade .img-placeholder--hero {
+      grid-column: 1 / -1;
+      aspect-ratio: 16 / 9;
+      min-height: 280px;
+    }
+
+    .img-placeholder {
+      aspect-ratio: 4 / 3;
+      min-height: 240px;
+      background: #f0f0f0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .img-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .img-placeholder--empty {
+      background: #ececec;
+    }
+
+    .img-placeholder--empty::after {
+      content: "";
+      width: 80%;
+      height: 45%;
+      background: #d4d4d4;
+      opacity: 0.5;
+    }
+
+    .section-text {
+      padding-top: 0.25rem;
+      max-width: 100%;
+      padding-right: 0;
+    }
+
+    .feature-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+      color: #111;
+    }
+
+    /* Final Design header */
+    .final-design-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 4rem;
+    }
+
+    .final-design-title {
+      font-size: clamp(1.85rem, 4.5vw, 2.65rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin: 0;
+      color: #111;
+    }
+
+    /* Centered text-only sections */
+    .centered-section {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .centered-section .section-body {
+      text-align: left;
+    }
+
+
+
+
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      background: #fff;
+      color: #111;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: border-color 0.2s;
+      z-index: 50;
+    }
+
+    .back-to-top:hover {
+      border-color: #111;
+    }
+
+    @media (max-width: 900px) {
+      .section-split {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .section-images {
+        order: 2;
+      }
+
+      .section-text {
+        order: 1;
+      }
+
+      .section-images--row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 0 1rem;
+      }
+
+      .meta-row {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+        text-align: center;
+      }
+
+      .hero-image {
+        height: 60vh;
+        min-height: 360px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header" id="top">
+    <nav class="nav">
+      <div class="nav-left">
+        <img src="assets/images/pearj.svg" alt="Pear J logo" class="logo" />
+        <a href="about.html">About</a>
+        <a href="assets/PanyanusJ_Resume.pdf">Resume</a>
+      </div>
+      <div class="workplay-nav">
+        <a href="work.html"><b>Work</b></a>
+        <span>//</span>
+        <a href="play.html">Play</a>
+      </div>
+      <div class="nav-right">👀</div>
+    </nav>
+  </header>
+
+  <article class="case-study">
+    <div class="case-study-header">
+      <h1 class="case-title">SC DAYS 2026 Feel the New SC Exhibition</h1>
+      <p class="case-intro">
+        SC Asset transforms a Siam Paragon storefront into a walk-through world for SC Asset's new identity — a continuous journey of curved, revealing walls that carries visitors through three experiential "engines." A rebrand you don't read about, but move and feel through.
+      </p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="meta-row">
+      <div class="meta-block">
+        <span class="meta-label">Work under</span>
+        <span class="meta-value">Keystone Studio</span>
+      </div>
+      <div class="meta-block">
+        <span class="meta-label">Project Scope</span>
+        <span class="meta-value">Spatial & Experience Design</span>
+      </div>
+      <div class="meta-block">
+        <span class="meta-label">Role</span>
+        <span class="meta-value">Spatial Concept, Visual Identity, Exhibition Art Direction</span>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Hero -->
+    <div class="hero-section">
+      <img src="assets/images/hero.jpg" alt="SC DAYS exhibition facade at night" class="hero-image">
+    </div>
+
+    <hr class="divider">
+
+    <!-- Problem Space -->
+    <section>
+      <div class="section-image-featured">
+        <div class="img-placeholder img-placeholder--featured">
+          <img src="assets/images/sc_rebrand.png" alt="SC logo inspired by sunflower pollen">
+        </div>
+      </div>
+      <div class="section-text section-text--below">
+        <h2 class="section-heading"><center>Translating a Rebrand into Space</center></h2>
+        <div class="section-body">
+          <p>
+            SC Asset had just reintroduced itself: younger, warmer, more energetic — an identity built on the sunflower and its spiralling seed geometry. The brief for SC DAYS was to make that identity felt rather than announced, across a ~700 sqm floor at Parc Paragon over six days.
+            The space had to work on two registers at once: a beacon pulling mall traffic in from the concourse, and an immersive interior that revealed itself slowly. Not a showroom of products — a world visitors could walk into and leave carrying.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Final Design -->
+    <section>
+      <div class="final-design-header">
+        <h2 class="final-design-title">&amp;SC DAYS Presents, A Spatial Journey</h2>
+      </div>
+
+      <!-- 1. Concept -->
+      <div class="section-split">
+        <div class="section-images section-images--full">
+          <div class="img-placeholder">
+            <img src="assets/images/sc_concept.png" alt="SC design language — Spread, Layers, Interlocking">
+          </div>
+        </div>
+        <div class="section-text">
+          <h3 class="feature-title">Concept — Idea</h3>
+          <div class="feature-text">
+            <p>
+              The sunflower gave the plan its logic. In nature the seed-head packs outward in a spiralling, decentralized pattern, and the flower always turns to face the sun. We read that literally: the customer is the sun, SC is the sunflower that orients to them. That pollen-spread geometry became circulation — an endless, non-linear route with no dead ends, drawn as curved walls that alternately expose and enclose, so each turn gradually reveals what's inside.            </p>
+          </div>
+          <div class="section-images section-images--full section-images--stack">
+            <div class="img-placeholder">
+              <img src="assets/images/spatialnarrative1.png" alt="SC spatial narrative diagram">
+            </div>
+            <div class="img-placeholder">
+              <img src="assets/images/spatialnarrative.png" alt="SC spatial narrative diagram">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- 2. Facade -->
+      <div class="section-split">
+        <div class="section-images section-images--facade">
+          <div class="img-placeholder img-placeholder--hero">
+            <img src="assets/images/facade.jpg" alt="SC DAYS facade overview">
+          </div>
+          <div class="img-placeholder img-placeholder--hero">
+            <img src="assets/images/facade1.JPG" alt="SC DAYS facade overview">
+          </div>
+          <div class="img-placeholder"><img src="assets/images/facade3.jpg" alt="Facade detail 1"></div>
+          <div class="img-placeholder"><img src="assets/images/facade4.JPG" alt="Facade detail 1"></div>
+          <div class="img-placeholder"><img src="assets/images/facade5.jpg" alt="Facade detail 1"></div>
+          <div class="img-placeholder"><img src="assets/images/facade6.jpg" alt="Facade detail 1"></div>
+        </div>
+        <div class="section-text">
+          <h3 class="feature-title"><center>Facade</center></h3>
+          <div class="feature-text">
+            <p>
+              The Skytrain-facing facade is a glowing, semi-transparent volume — warm light held behind a curtain of panels. A programmed lighting array washes both the panels and the &SC mark through the brand's CI palette, the colours shifting gradually so the whole surface reads as a slow-changing canvas rather than a fixed sign — a field of endless possibility. Its translucency offers a glimpse of the activity inside without resolving it, while a double layer of opaque material screens the structure behind, keeping the volume clean and letting the light, not the framing, do the talking. A beacon across the concourse that hides as much as it shows — signalling a world inside without giving it away.            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- 3. Front / Cafe / Tunnel -->
+      <div class="section-split">
+        <div class="section-images">
+          <div class="img-placeholder img-placeholder--empty"></div>
+          <div class="img-placeholder img-placeholder--empty"></div>
+          <div class="img-placeholder img-placeholder--empty"></div>
+          <div class="img-placeholder img-placeholder--empty"></div>
+        </div>
+        <div class="section-text">
+          <h3 class="feature-title">Front / Cafe / Tunnel Installation</h3>
+          <div class="feature-text">
+            <p>
+              The entry breaks the SC mark apart into a tunnel of curved forms — a compression at the threshold and a built-in photo moment before the space opens up. To one side sits the café, adapting the Kromo (by Hilton) hospitality identity from SC's own portfolio; to the other, a stage for panel talks. The everyday and the ceremonial frame the entrance before the journey begins.            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- 4. Engine 1 -->
+      <div class="section-split">
+        <div class="section-images">
+          <div class="img-placeholder img-placeholder--empty"></div>
+          <div class="img-placeholder img-placeholder--empty"></div>
+          <div class="img-placeholder img-placeholder--empty"></div>
+          <div class="img-placeholder img-placeholder--empty"></div>
+        </div>
+        <div class="section-text">
+          <h3 class="feature-title">Engine 1 — For Good Mornings</h3>
+          <div class="feature-text">
+            <p>
+              The first engine turns SC's residential projects into a game — a Where's-Wally search fused with a personality quiz that matches each visitor to the SC home that suits them. Alongside it runs the "DNA of Care" wall: illustrated residents who speak in real recorded customer voices through horn speakers, making SC's care tagline something you actually hear.
+
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- 5. Engine 2 -->
+      <div class="section-split">
+        <div class="section-images">
+          <div class="img-placeholder img-placeholder--empty"></div>
+          <div class="img-placeholder img-placeholder--empty"></div>
+          <div class="img-placeholder img-placeholder--empty"></div>
+          <div class="img-placeholder img-placeholder--empty"></div>
+        </div>
+        <div class="section-text">
+          <h3 class="feature-title">Engine 2 — The Way Forward</h3>
+          <div class="feature-text">
+            <p>
+              The second engine is a movement-tracked projection field. As visitors walk, SC's non-residential ventures surface underfoot — discovered rather than displayed. A crane installation marks the moment SC moves into new territory: น่านน้ำใหม่, new waters, signalling a company expanding beyond the home.
+
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- 6. Engine 3 -->
+      <div class="section-split">
+        <div class="section-images">
+          <div class="img-placeholder img-placeholder--empty"></div>
+          <div class="img-placeholder img-placeholder--empty"></div>
+          <div class="img-placeholder img-placeholder--empty"></div>
+          <div class="img-placeholder img-placeholder--empty"></div>
+        </div>
+        <div class="section-text">
+          <h3 class="feature-title">Engine 3 — Paint the Better Future</h3>
+          <div class="feature-text">
+            <p>
+              The final engine is a blank canvas. Visitors answer prompts by painting directly into the room — an open, deliberately unfinished space that stands for endless possibility and SC's expansion into total newness. Where the earlier engines look at what SC has built, this one hands the future to the visitor.
+
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- 7. Networking Room -->
+      <div class="section-split">
+        <div class="section-images">
+          <div class="img-placeholder img-placeholder--empty"></div>
+          <div class="img-placeholder img-placeholder--empty"></div>
+          <div class="img-placeholder img-placeholder--empty"></div>
+          <div class="img-placeholder img-placeholder--empty"></div>
+        </div>
+        <div class="section-text">
+          <h3 class="feature-title">Milestone of SC</h3>
+          <div class="feature-text">
+            <p>
+              A curved hall wraps a timeline of SC's story — from the company's founding in 1995 through three decades of projects to the 2026 rebrand — laid out as a continuous "SC Journey" wall. Rounded seating gathers at the center, slowing visitors down to read the arc of a company that has kept turning toward its customers. It's the one still point in the route: a place to sit inside SC's history before stepping back out into the present.            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Impact -->
+    <section class="centered-section">
+      <div class="section-body">
+        <p>
+          The hardest part wasn't any single zone — it was making one continuous route hold three completely different experiences without feeling like a corridor of booths. Letting the sunflower's spreading geometry drive the plan, rather than decorate the walls, was what held it together: circulation, reveals, and pacing all came from the same logic.
+          SC DAYS was a lesson in designing for a body in motion — where a curve that conceals, a compression before a reveal, and the timing of what you see next do more narrative work than any graphic. It's the closest I've come to treating a floor plan as a script.        </p>
+      </div>
+    </section>
+    
+</body>
+</html>
